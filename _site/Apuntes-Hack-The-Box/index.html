@@ -1,0 +1,595 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.15.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Apuntes Hack The Box - Ciberseguridad y Hacking Ético</title>
+<meta name="description" content="En esta sección están los apuntes de una página que se usa normalmente para hackear">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ciberseguridad y Hacking Ético">
+<meta property="og:title" content="Apuntes Hack The Box">
+<meta property="og:url" content="http://localhost:4000/Apuntes-Hack-The-Box/">
+
+
+  <meta property="og:description" content="En esta sección están los apuntes de una página que se usa normalmente para hackear">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-29T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Apuntes-Hack-The-Box/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "ARgoN",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ciberseguridad y Hacking Ético Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+                
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/" >Artículos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categorías</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Etiquetas</a>
+            </li><li class="masthead__menu-item">
+              <a href="/videos/" >Vídeos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/buscador/" >Buscador</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >Contacto</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Apuntes Hack The Box</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="ARgoN" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">ARgoN</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        CyberSecurity Analyst / CPHE / CHEE
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/nicolle.lovelace.9" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/Dname24" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Apuntes Hack The Box">
+    <meta itemprop="description" content="En esta sección están los apuntes de una página que se usa normalmente para hackear">
+    <meta itemprop="datePublished" content="January 29, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Apuntes Hack The Box
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="page__meta">
+          
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2020-01-29T00:00:00-05:00">January 29, 2020 </time>&emsp;
+          
+          
+        </p>
+        <h3 id="apuntes-básicos">Apuntes básicos:</h3>
+
+<p>Primero hacer <strong>ping</strong> a la <strong>ip</strong> para vertificar si esta recibe paquetes</p>
+
+<p>Después debemos realizar un escaneo de puertos con <strong>nmap</strong></p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>nmap <span class="nt">-sV</span> <span class="nt">-O</span> <span class="o">{</span>IP<span class="o">}</span> </code></pre></figure>
+
+<p>Como vemos el comando lleva</p>
+
+<p><strong>-sV</strong> sirve para la <strong>Detección de versiones</strong></p>
+
+<p><strong>-O</strong> 	sirve para la <strong>Detección del sistema operatico</strong></p>
+
+<p>Después de ejecutar el código nos damos cuenta que tiene un servicio llamado <strong>FTP</strong>
+<strong>(File Transfer Protocol)</strong> el que se encarga de transferir archivos de manera manual o 
+automática por medio de client-server, a veces está mal configurada y se puede explotar.
+Tener en cuenta servicios adicionales como <em>SSH/HTTPD (Secure Shell Protocol/Web Server)</em>
+que permite <strong>recibir y enviar archivos</strong> que se pueden usar para configurar el <strong>servidor web</strong>
+o servir registros a una fuente externa.</p>
+
+<div>
+<p style="text-align:center;">
+<img src="https://i1.wp.com/nksistemas.com/wp-content/uploads/2012/06/puertos.png?ssl=1" alt="JuveYell" width="500px" />
+</p>
+</div>
+
+<p>Como se ve en la imagen tenemos sus puerto con sus servicios, tener en cuenta <strong>port 21:ftp</strong>
+<strong>port 22:SSH</strong> <strong>port 80:Web Server</strong> pero como es una máquina simple no tendrá seguridad y 
+podremos ingresar con los siguientes comandos:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ftp <span class="o">{</span>IP<span class="o">}</span>
+Connected to <span class="o">{</span>IP<span class="o">}</span><span class="nb">.</span>
+220 <span class="o">(</span>vsFTPd 3.0.3<span class="o">)</span>
+Name <span class="o">({</span>IP <span class="o">}</span>:<span class="o">{</span>username<span class="o">})</span>:
+331 Please specify the password.
+Password:</code></pre></figure>
+
+<p>Nos pide un usuario y contraseña el cual si está mal configurado se podrá acceder con username: <del>anonymous</del>
+y con cualquier contraseña ya que el servicio ignorará la contraseña.</p>
+
+<h3 id="smbclient">smbclient</h3>
+
+<p>Alojado en el puerto <strong>445</strong>, utilizaremos un script llamado <strong>smbclient -h</strong></p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">smbclient <span class="nt">-L</span> <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<p><strong>–List = Host</strong></p>
+
+<p>Con el comando L se selecciona el hostde destino para la solicitud de conexión, con esto esperamos
+la siguiente respuesta aunque no siempre es igual en todas las maquinas:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    ADMIN<span class="nv">$:</span> Los recursos compartidos de red ocultas creado por windows, 
+	    permite tener acceso remoto<span class="o">(</span>no se elimina, solo se deshabilitan<span class="o">)</span>
+        C<span class="nv">$:</span> Sistema Operativo
+      IPC<span class="nv">$:</span> Recursos compartidos
+WorkShares: Custom Share</code></pre></figure>
+
+<p>Para poder ver los archivos que se encuentran dentro de estos recursos compartidos usamos el sgte comando:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">smbclient <span class="se">\\\{</span>IP<span class="o">}</span><span class="se">\\</span><span class="o">{</span>Recurso-Compartido<span class="o">}</span></code></pre></figure>
+
+<h3 id="xfreerdp">xfreerdp</h3>
+
+<p>Alojado en el puerto <strong>3389</strong> normalmente usado para <strong>RDP(Remote Desktop Protocol)</strong>, utilizaremos un script
+llamado <strong>xfreerdp</strong> que permitirá ver la pantalla de la victima.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">xfreerdp <span class="o">[</span>file] <span class="o">[</span>options] <span class="o">[</span>/v:&lt;server&gt;[:port]]</code></pre></figure>
+
+<p>Como es una maquina simple solo usaremos el sgte comando <strong>xfreerdp /v:{IP}</strong>, nos pedirá un usuario y contraseña
+podríamos usar los sgtes nombres:”admin,  administrator, root, user”</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">xfreerdp /v:<span class="o">{</span>IP<span class="o">}</span> /u:Administrator</code></pre></figure>
+
+<h2 id="sql-injection">SQL Injection</h2>
+
+<p>Modificamos el comando aumentandolé un nuevo parametro:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>nmap <span class="nt">-sC</span> <span class="nt">-sV</span> <span class="nt">-O</span> <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<p><strong>-sC</strong> sirve para realizar un analisis de secuencia de comandos. Es equivalente a –script = default.</p>
+
+<p>Cuando tenemos el <strong>puerto: 80</strong> abierto que es referente a un servidor web, como ya
+sabemos las páginas web tienen directorios los cuales tenemos que visitar para poder encontrar una vulnerabilidad
+y poder explotarla, directorios como: <strong>Home , About , Contact , Register , and Log-in pages</strong>
+Para esto usaremos una herramienta llamada <a href="https://github.com/OJ/gobuster.git">GoBuster</a> que se encargará de 
+encontrar esos directorios.</p>
+
+<p>Lo instalamos:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">go get <span class="o">&amp;&amp;</span> go build
+go <span class="nb">install
+</span>gobuster <span class="nt">--help</span></code></pre></figure>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL Service 
+  →Database
+   →Tables
+    →Columns↘
+             Data	
+    →Rows   ↗
+</code></pre></div></div>
+<p>En el “grafico” anterior vemos como funciona un servicion SQL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       User Search                 Permissions Check
+       ___________                 _________________
+      /           ↘               /                 ↘	 
+Client             Web Aplication                    SQL Service 
+   
+HTTP 200 la pagína o recurso existe así que procede con el envio de los datos
+     404 no encontrado, la página o recurso no existe
+     302 página o recurso encontrado pero mediante redireción
+</code></pre></div></div>
+
+<p>Ejemplo de SQL Injection</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nb">mysql_connect</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"db_username"</span><span class="p">,</span> <span class="s2">"db_password"</span><span class="p">);</span> 
+<span class="c1"># Connection to the SQLDatabase.</span>
+<span class="nb">mysql_select_db</span><span class="p">(</span><span class="s2">"users"</span><span class="p">);</span> 
+<span class="c1"># Database table where user information is stored.</span>
+
+<span class="nv">$username</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">];</span> 
+<span class="c1"># User-specified username.</span>
+<span class="nv">$password</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">];</span> 
+<span class="c1">#User-specified password.</span>
+
+<span class="nv">$sql</span><span class="o">=</span><span class="s2">"SELECT * FROM users WHERE username='</span><span class="nv">$username</span><span class="s2">' AND password='</span><span class="nv">$password</span><span class="s2">'"</span><span class="p">;</span>
+<span class="c1"># Query for user/pass retrieval from the DB.</span>
+
+<span class="nv">$result</span><span class="o">=</span><span class="nb">mysql_query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+<span class="c1"># Performs query stored in $sql and stores it in $result.</span>
+
+<span class="nv">$count</span><span class="o">=</span><span class="nb">mysql_num_rows</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="c1"># Sets the $count variable to the number of rows stored in $result.</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$count</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+  <span class="c1"># Checks if there's at least 1 result, and if yes:</span>
+ <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+ <span class="c1"># Creates a session with the specified $username.</span>
+ <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+ <span class="c1"># Creates a session with the specified $password.</span>
+ <span class="nb">header</span><span class="p">(</span><span class="s2">"location:home.php"</span><span class="p">);</span>
+ <span class="c1"># Redirect to homepage.</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+ <span class="c1"># If there's no singular result of a user/pass combination:</span>
+  <span class="nb">header</span><span class="p">(</span><span class="s2">"location:login.php"</span><span class="p">);</span>
+ <span class="c1"># No redirection, as the login failed in the case the $count </span>
+ <span class="c1">#variable is not equal to</span>
+ <span class="c1">#1, HTTP Response code 200 OK.</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Esto es un concepto básico pero util en algunos casos como se mira en el código <strong>php</strong> el <strong>#</strong>
+sirve para hacer comentarios, lo podemos usar para ingresar como un usuario admin usando un fallo
+en el código ingresando así</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user: admin'#
+password: #
+</code></pre></div></div>
+
+<p>En verdad la contraseña no importa ya que con el <strong>#</strong> lo toma como un comentario y ponemos 
+cualquier cosa en contraseña ya que no podemos ingresar si no colocamos un texto en ese recuadro.</p>
+
+<h3 id="gobuster">GoBuster</h3>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#hack-the-box" class="page__taxonomy-item" rel="tag">Hack The Box</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#vulnerabilidad" class="page__taxonomy-item" rel="tag">Vulnerabilidad</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#write-up" class="page__taxonomy-item" rel="tag">Write Up</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">Research</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Fecha:</strong> <time datetime="2020-01-29T00:00:00-05:00">January 29, 2020</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/Hacking-de-redes-WIFI/" class="pagination--pager" title="Hacking de redes WIFI
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 ARgoN</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

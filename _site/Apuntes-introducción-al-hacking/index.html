@@ -1,0 +1,828 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.15.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Apuntes del curso Introducción al hacking - Ciberseguridad y Hacking Ético</title>
+<meta name="description" content="En este post están los apuntes que considero importante, también algunos recordatorios">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ciberseguridad y Hacking Ético">
+<meta property="og:title" content="Apuntes del curso Introducción al hacking">
+<meta property="og:url" content="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">
+
+
+  <meta property="og:description" content="En este post están los apuntes que considero importante, también algunos recordatorios">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-11T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "ARgoN",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ciberseguridad y Hacking Ético Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+                
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/" >Artículos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categorías</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Etiquetas</a>
+            </li><li class="masthead__menu-item">
+              <a href="/videos/" >Vídeos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/buscador/" >Buscador</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >Contacto</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Apuntes del curso Introducción al hacking</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="ARgoN" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">ARgoN</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        CyberSecurity Analyst / CPHE / CHEE
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/nicolle.lovelace.9" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/Dname24" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Apuntes del curso Introducción al hacking">
+    <meta itemprop="description" content="En este post están los apuntes que considero importante, también algunos recordatorios">
+    <meta itemprop="datePublished" content="October 11, 2021">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Apuntes del curso Introducción al hacking
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="page__meta">
+          
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2021-10-11T00:00:00-05:00">October 11, 2021 </time>&emsp;
+          
+          
+        </p>
+        <h1 id="conceptos-básicos">Conceptos básicos</h1>
+<h2 id="asignación-e-interpretación-de-permisos">Asignación e Interpretación de permisos</h2>
+
+<p>Para interpretar permisos podemos verlos con el comando <strong>ls -l</strong> el cual nos muestra los permisos que tienen las carpetas o 
+archivos y tendremos lo siguiente:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+d rwx r-xr-x *****   *****   0 B Fri Nov 19 13:43:46 2021  *****
+
+
+d: directorio
+   rwx           rwx       rwx
+Propietario     Grupo     Otros
+    P             G         O
+
+
+
+   rwx           r-x
+   ***         solo se puede leer
+                y se puede atravesar
+
+
+r: leer
+w: escribir
+x:
+  f: ejecutable
+  d: se puede atravesar como un (cd "directorio")
+
+
+</code></pre></div></div>
+
+<p>También podemos conocerlo de manera numerica de la siguiente forma:</p>
+
+<p><strong>r = 2^2 = 4</strong></p>
+
+<p><strong>w = 2^1 = 2</strong></p>
+
+<p><strong>x = 2^0 = 1</strong></p>
+
+<p>así como también podemos cambiar esos permisos con <strong>chmod</strong> ya sea de las siguientes maneras:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>chmod g+w “directorio”</em></td>
+      <td><em>chmod o-w “directorio”</em></td>
+    </tr>
+    <tr>
+      <td><em>chmod 774 “directorio”</em></td>
+      <td><em>chmod 751 “directorio”</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+<p style="text-align:center;">
+<img src="https://mural.uv.es/oshuso/p1.jpg" width="500px" />
+</p>
+</div>
+
+<p><strong><em>Permisos STICKY BIT</em></strong></p>
+
+<p>Cuando se le asigna a un directorio, significa que los elementos que hay en ese directorio solo 
+pueden ser renombrados o borrados por su propietario o bien por root. El resto de usuarios que 
+tengan permisos de lectura y escritura, los podrán leer y modificar, pero no borrar.</p>
+
+<p><em>chmod 1775 “directorio”</em></p>
+
+<p><strong><em>Permisos SUID o SGID</em></strong></p>
+
+<p>Cuando se activa el bit SUID sobre un fichero significa que el 
+que lo ejecute va a tener los mismos permisos que el que creó el archivo.</p>
+
+<p><em>chmod 4775 “directorio”</em></p>
+
+<p>Con toda esta información podemos abusar y explotar privilegios</p>
+
+<h2 id="explotación-de-tareas-cron">Explotación de tareas Cron</h2>
+
+<p>Las tareas Cron son las que se ejecutan en intervalos regulares de tiempo <em>en segundo plano</em>, su estructura es la
+siguiente:</p>
+
+<div>
+<p style="text-align:center;">
+<img src="https://www.redeszone.net/app/uploads-redeszone.net/2017/01/Linux-cron-crontab-a%C3%B1adir-tareas-periodicas.png" width="500px" />
+</p>
+</div>
+
+<p>Con esto podemos ver si alguna tarea se está ejecutando en segundo plano y podemos conseguir dominio root con conocimientos básicos
+También podemos crear un script en bash para automatizar la tarea y buscar qué se está ejecutando en segundo plano
+por ejemplo este código básico:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c">#!/bin/bash</span>
+
+<span class="nv">old_process</span><span class="o">=</span> <span class="si">$(</span>ps <span class="nt">-eo</span> <span class="nb">command</span><span class="si">)</span>
+
+<span class="k">while </span><span class="nb">true</span><span class="p">;</span> <span class="k">do
+     </span><span class="nv">new_process</span><span class="o">=</span> <span class="si">$(</span>ps <span class="nt">-eo</span> <span class="nb">command</span><span class="si">)</span>
+     diff &lt;<span class="o">(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$old_process</span><span class="s2">"</span><span class="o">)</span> &lt;<span class="o">(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$new_process</span><span class="s2">"</span><span class="o">)</span> 
+     | <span class="nb">grep</span> <span class="s2">"[</span><span class="se">\&gt;\&lt;</span><span class="s2">]"</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"/"</span>
+     <span class="nv">old_process</span><span class="o">=</span> <span class="nv">$new_process</span>
+<span class="k">done</span></code></pre></figure>
+
+<p>Después de ejecutarlo vemos que permisos tienen las carpetas o archivos, si encontramos un permiso SUID podemos conseguir el “root”
+como lo vimos antes.</p>
+
+<h4 id="explotación-de-un-path-hijacking">Explotación de un PATH Hijacking</h4>
+
+<p>Consiste en suplantar una librería <strong>$PATH</strong>, que un binario esté usando para inyectar código de forma que 
+el atacante escale privilegios y/u obtenga un shell en el sistema o consiga root.
+Para aplicar esto de manera sencilla primero vemos el contenido de la variable <strong>$PATH</strong> con el comando <strong>echo $PATH</strong>
+y nos da como respuesta una ruta, podemos crear un archivo .sh para poder introducirlo como ataques por inyección</p>
+
+<p>Debemos intuir si un proceso se está ejecutando de forma absoluta o relativa, teniendo en cuenta que esta última 
+es de riesgo ya que podemos alterar el flujo de comandos.</p>
+
+<p>El procedimiento para la explotación:</p>
+
+<p>1.-Ubicar el programa</p>
+
+<p>2.-Listar los permisos de la ubicación en la que se encuentra</p>
+
+<p>3.-Leer el contenido del programa</p>
+
+<p>4.-Crear un archivo para suplantar una de las librerías del programa</p>
+
+<p>5.-Inyectar el código deseado</p>
+
+<p>Podemos usar esta web para ayudarnos <a href="https://gtfobins.github.io/">GTFOBins</a></p>
+
+<h2 id="herramienta-nmap">Herramienta NMAP</h2>
+
+<p>Existe la herramienta Nmap que se usa para enumerar puertos, tenemos algunos parametros como:</p>
+
+<p><strong>-v</strong>   :Significa «verbose», por lo que se nos indica lo que está haciendo el análisis al detalle–&gt;</p>
+
+<p><strong>-n</strong>  :Quita la resolución DNS</p>
+
+<p><strong>-p-</strong> :Quiere decir que se escaneará todos los puertos</p>
+
+<p><strong>-sS</strong> :Este comando determina si el puerto objetivo está escuchando</p>
+
+<p><strong>-sV</strong> :Para detectar las versiones de los servicios</p>
+
+<p><strong>-sC</strong> :Sirve para realizar un analisis de secuencia de comandos. Es equivalente a –script = default</p>
+
+<p><strong>-Pn</strong> :Si un usuario no cuenta con privilegios elevados sobre paquetes, este es el comando para escanear con la opción «conexión TCP»</p>
+
+<p><strong>-O</strong>  :Detecta el sistema operativo</p>
+
+<p><strong>-A</strong>  :Escaneo de Sistema Operativo y servicios</p>
+
+<h5 id="escaneo-de-servicios-de-banner-ligero">Escaneo de servicios de banner ligero</h5>
+
+<p>Es mucho menos ruidoso que un escaneo agresivo y permite obtener datos sin llamar demasiado la atención, 
+lo que aporta una clara ventaja.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">nmap <span class="nt">-sV</span> <span class="nt">--version-intensity</span> 0 <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<p>también podemos usar los scripts por defecto que vienen con nmap, para buscar vulnerabilidades, etc.
+Lo usamos ejecutando este código:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">nmap <span class="nt">-sV</span> <span class="nt">-p</span><span class="o">{</span>ports<span class="o">}</span> <span class="o">{</span>IP<span class="o">}</span> <span class="nt">--scripts</span> <span class="s2">""</span></code></pre></figure>
+
+<p>para saber los nombres de los scripts los podemos filtrar</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="k">function </span>scripts_nmap<span class="o">(){</span>
+        locate .nse | xargs <span class="nb">grep</span> <span class="s2">"categories"</span> | <span class="nb">grep</span> <span class="nt">-oP</span> <span class="s1">'".*?"'</span> | <span class="nb">sort</span> <span class="nt">-u</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="haciendo-fuzzing-para-encontrar-directorios">Haciendo Fuzzing para encontrar directorios</h3>
+
+<p>Podremos hacer fuzzing con los scripts de nmap, pero tener en cuenta que el script solo te enlista algunos directorios 
+por eso su peso es menor y no hace tanta bulla como las listas encontradas en el siguiente directorio:</p>
+
+<p><code class="language-plaintext highlighter-rouge">/usr/share/wordlists/dirbuster/</code></p>
+
+<p>Usamos este comando para para el fuzzing con nmap</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">nmap <span class="nt">-p80</span> <span class="o">{</span>IP<span class="o">}</span>  <span class="nt">--script</span> http-enum <span class="nt">-oN</span> webScan</code></pre></figure>
+
+<p>Si eres curioso puedes ver como se intercepta el trafico que se envía a las páginas para encontrar esos directorios con Tshark 
+o Wireshark; pero también existen otras herramientas para encontrar directorios como:</p>
+
+<h4 id="wfuzz">Wfuzz</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">wfuzz <span class="nt">-c</span> <span class="nt">-L</span> <span class="nt">-t</span> 400 <span class="nt">--hc</span><span class="o">=</span>400 <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt  <span class="o">{</span>IP<span class="o">}</span>/FUZZ</code></pre></figure>
+
+<p><strong>-c</strong></p>
+
+<p>Es para que lo muestre en colores(es opcional)</p>
+
+<p><strong>-L</strong></p>
+
+<p>Es un follow redirect</p>
+
+<p><strong>–hc= 404</strong></p>
+
+<p>Es para que oculte aquellos directorios que muestran error 404 NOT FOUND</p>
+
+<p><strong>-t 400</strong></p>
+
+<p>Para intentar con 400 directorios de la lista, se puede manipular</p>
+
+<p>Para agregar extensiones a los directorios nos creamos un .txt con los siguientes nombres dentro “php, html, txt” y lo
+agregamos a nuestro comando Wfuzz de la siguiente manera.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">wfuzz <span class="nt">-c</span> <span class="nt">-L</span> <span class="nt">-t</span> 400 <span class="nt">--hc</span><span class="o">=</span>400 <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt <span class="nt">-w</span> extensiones.txt <span class="o">{</span>IP<span class="o">}</span>/FUZZ/FUZ2Z</code></pre></figure>
+
+<h4 id="dirbuster">Dirbuster</h4>
+
+<p>Esta manera es gráfica asi que no creo que haya problemas y que no sea necesario explicar</p>
+
+<h4 id="dirb">Dirb</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">dirb <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<h4 id="gobuster">GoBuster</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">gobuster <span class="nb">dir</span> <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt <span class="nt">--url</span> <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<h4 id="dirsearch">DirSearch</h4>
+
+<p>Este se debe descargar desde su git</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">./dirsearch.py <span class="nt">-u</span> <span class="o">{</span>ip<span class="o">}</span> <span class="nt">-E</span> <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt </code></pre></figure>
+
+<h3 id="técnicas-de-enumeración-bajo-un-servidor-web">Técnicas de enumeración bajo un servidor web</h3>
+
+<h4 id="wafw00f">wafw00f</h4>
+
+<p>Esta herramienta ayuda a buscar si la página web utiliza un WAF(Web Application Firewall)</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">wafw00f <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
+
+<h2 id="uso-de-burpsuite">Uso de BurpSuite</h2>
+
+<p>Es una app que sirve de intermediario entre la página y la peticiones que se envía, podemos leer cómo se usa en este link</p>
+
+<p><a href="https://www.manusoft.es/tutorial-burp-suite/">BurpSuite</a></p>
+
+<p>Usando las herramientas del mismo BurpSuite tenemos el “repeater” que nos permite tener la respuesta de la 
+página en la misma app</p>
+
+<p><a href="https://portswigger.net/burp/documentation/desktop/tools/proxy/getting-started">Repeater</a></p>
+
+<p>Otra de las herramientas interesantes de BurpSuite es “intruder” que nos permite automatizar ataques añadiendo payloads 
+a los comandos que introducimos a la pagg</p>
+
+<p><a href="https://portswigger.net/burp/documentation/desktop/tools/intruder/using">Intruder</a></p>
+
+<h1 id="tipos-de-vulnerabilidades">Tipos de Vulnerabilidades</h1>
+
+<h2 id="local-file-intrusion-lfi">Local File Intrusion (LFI)</h2>
+
+<p>Esta técnica consiste en incluir ficheros locales, es decir, archivos que se encuentran en el mismo servidor de la web con este tipo
+de fallo -a diferencia de Remote File Inclusión o inclusión de archivos remotos (RFI) que incluye archivos alojados en otros 
+servidores. Esto se produce como consecuencia de un fallo en la programación de la página, filtrando inadecuadamente lo que se 
+incluye al usar funciones en PHP para incluir archivos.</p>
+
+<p><a href="https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/">LFI</a></p>
+
+<h2 id="log-poisoning---lfi-to-rce">Log Poisoning - LFI to RCE</h2>
+
+<p>Cuando uno encuentra una vulnerabilida LFI lo mejor sería convertirla a RCE(Remote Code Execution) 
+Entonces, hay una variedad de trucos diferentes para convertir su LFI en RCE, como por ejemplo:</p>
+
+<p>1.- Using file upload forms/functions</p>
+
+<p>2.- Using the PHP wrapper expect://command</p>
+
+<p>3.- Using the PHP wrapper php://file</p>
+
+<p>4.- Using the PHP wrapper php://filter</p>
+
+<p>5.- Using PHP input:// stream</p>
+
+<p>6.- Using data://text/plain;base64,command</p>
+
+<p>7.- Using /proc/self/environ</p>
+
+<p>8.- Using /proc/self/fd</p>
+
+<p>9.- Using log files with controllable input like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    /var/log/apache/access.log
+    /var/log/apache/error.log
+    /var/log/vsftpd.log
+    /var/log/sshd.log
+    /var/log/mail
+</code></pre></div></div>
+
+<h2 id="remote-file-inclusion-rfi">Remote File Inclusion RFI</h2>
+
+<p>Esta vulnerabilidad consiste en subir archivos a una página desde la de nuestro servidor compartido por el puerto 80.</p>
+
+<p>Abrimos nuestro servidor de la siguiente manera:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    sudo python3 -m http.server 80
+</code></pre></div></div>
+
+<p>Y luego procedemos a continuar con la vulnerabulidad, la podemos buscar directamente desde searchexploit</p>
+
+<h2 id="vulnerabilidad-html-injection-y-xss">Vulnerabilidad HTML Injection y XSS</h2>
+
+<p>Cross-site scripting (XSS) es un ataque de inyección de código que permite a un atacante ejecutar JavaScript 
+malicioso en el navegador de otro usuario, este ataca a otros usuarios que se conectan a dicha página web, 
+y los ataca en busca de varias cosas:</p>
+
+<p>secuestrarles la sesión, robarles la contraseña o cualquier otra 
+información que considere de interés.</p>
+
+<h5 id="cross-site-scripting-persistente">Cross Site Scripting persistente</h5>
+
+<p>Si el código que hemos insertado se queda almacenado en el servidor, por ejemplo formando parte de una contribución en un foro, 
+el ataque se dice que es persistente. Cualquier usuario que entre a leer dicha contribución leerá el texto inocente 
+pero probablemente no así el código inyectado, que sin embargo sí será interpretado por el navegador del visitante, 
+ejecutando las instrucciones que se haya definido.</p>
+
+<p>Estas acciones pueden ser variadas, y dependerá del tipo de navegador, de sus vulnerabilidades inherentes, 
+así como también de las de otros programas que tenga instalados, el Adobe Flash Player por ejemplo, que se ejecuten 
+como el atacante tiene previsto. Para él es por tanto una ruleta de la suerte. 
+No puede predecir el usuario que va a caer en la trampa.</p>
+
+<h4 id="cross-site-scripting-reflejado">Cross Site Scripting reflejado</h4>
+
+<p>Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
+llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado.</p>
+
+<p>Se llama así porque, si finalmente la víctima pincha en el enlace, el navegador le llevará a la página en cuestión, 
+que normalmente es un sitio legal donde el usuario tiene cuenta abierta, y a continuación ejecutará el código embebido, 
+el cual intentará robarle la «cookie» de la sesión, o los datos que introduzca en el formulario, o incluso podrá desencadenar 
+acciones más sofisticadas en su PC. Pero la característica diferencial con el anterior ataque es que en este caso 
+en el servidor web no queda almacenado nada.</p>
+
+<h4 id="cómo-saber-si-un-sitio-web-tiene-esta-vulnerabilidad">¿Cómo saber si un sitio web tiene esta vulnerabilidad?</h4>
+
+<p>Si en un sitio que ofrece búsquedas por palabras clave, en lugar de usar ese campo para buscar, escribimos lo siguiente:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;script type = ‘text / javascript’&gt; alert (‘soy vulnerable a XSS reflejado’); &lt;/ script&gt;  
+</code></pre></div></div>
+
+<p>le damos a buscar y, … voilà, entonces aparece un «pop up» con el mensaje «soy vulnerable a XSS reflejado», ¡bingo!: 
+este sitio tiene la vulnerabilidad XSS reflejado.</p>
+
+<h2 id="vulnerabilidad-cross-site-request-forgery-csrf">Vulnerabilidad Cross-Site Request Forgery (CSRF)</h2>
+
+<p>Las tres variantes del CSRF que se perpetúan con mayor frecuencia son las siguientes: 
+la más empleada consiste en colar una URL, dicha URL se esconde en una página web externa o en un correo electrónico. 
+El acceso a esta URL desencadena la solicitud HTTP y por norma general, el usuario sí puede ver esta URL si presta atención, 
+no obstante, el origen de la URL se puede ocultar mediante ingeniería social y la técnica de spoofing.</p>
+
+<h2 id="vulnerabilidad-server-side-request-forgery-ssrf">Vulnerabilidad Server-Side Request Forgery (SSRF)</h2>
+
+<p>Las vulnerabilidades SSRF (Server Side Request Forgery) y los ataques de XSPA (Cross Site Port Attacks) son dos fallos de seguridad 
+que van casi siempre de la mano. Los bugs de SSRF se producen en aplicaciones web inseguras que permiten a un atacante forzar al 
+servidor web a realizar peticiones desde dentro del sistema hacia el exterior. Usando esas conexiones, los ataques de XSPA tratan 
+de conocer, en base a las respuestas obtenidas, la lista de puertos que se encuentran abiertos o por el contrario cerrados en el 
+servidor al que se fuerza la conexión.</p>
+
+<h2 id="sql-injection">SQL Injection</h2>
+
+<h4 id="sqlmap">SQLmap</h4>
+
+<p>Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por aquí</p>
+
+<p><a href="https://www.solvetic.com/tutoriales/article/1615-sqlmap-herramienta-de-inyecci%C3%B3n-de-sql-y-ethical-hacking-de-bases-de-datos/#:~:text=Esta%20herramienta%20sirve%20para%20testear,de%20una%20base%20de%20datos.">SQLmap</a></p>
+
+<h4 id="manera-manual">Manera manual</h4>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#domain-controller" class="page__taxonomy-item" rel="tag">Domain Controller</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#gu%C3%ADas" class="page__taxonomy-item" rel="tag">Guías</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#herramientas" class="page__taxonomy-item" rel="tag">Herramientas</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#pentesting" class="page__taxonomy-item" rel="tag">Pentesting</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#privilege-escalation" class="page__taxonomy-item" rel="tag">Privilege Escalation</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#windows" class="page__taxonomy-item" rel="tag">Windows</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#exploits" class="page__taxonomy-item" rel="tag">Exploits</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">Research</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#utilidades" class="page__taxonomy-item" rel="tag">Utilidades</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#vulnerabilidades" class="page__taxonomy-item" rel="tag">Vulnerabilidades</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Fecha:</strong> <time datetime="2021-10-11T00:00:00-05:00">October 11, 2021</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/Herramientas-de-Hacking/" class="pagination--pager" title="Herramientas de Hacking
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 ARgoN</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
