@@ -110,7 +110,7 @@ author:
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "nicolle.lovelace.9"
   foursquare       :
   github           : "Dname24"
   gitlab           :
@@ -118,7 +118,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "diego-eduardo-ilave-vasquez" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         :  # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
