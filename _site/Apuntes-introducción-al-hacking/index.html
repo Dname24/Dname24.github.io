@@ -126,8 +126,6 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Etiquetas</a>
             </li><li class="masthead__menu-item">
-              <a href="/videos/" >Vídeos</a>
-            </li><li class="masthead__menu-item">
               <a href="/buscador/" >Buscador</a>
             </li><li class="masthead__menu-item">
               <a href="/about/" >Contacto</a>
@@ -417,7 +415,7 @@ por ejemplo este código básico:</p>
 <p>Después de ejecutarlo vemos que permisos tienen las carpetas o archivos, si encontramos un permiso SUID podemos conseguir el “root”
 como lo vimos antes.</p>
 
-<h4 id="explotación-de-un-path-hijacking">Explotación de un PATH Hijacking</h4>
+<h2 id="explotación-de-un-path-hijacking">Explotación de un PATH Hijacking</h2>
 
 <p>Consiste en suplantar una librería <strong>$PATH</strong>, que un binario esté usando para inyectar código de forma que 
 el atacante escale privilegios y/u obtenga un shell en el sistema o consiga root.
@@ -463,7 +461,7 @@ es de riesgo ya que podemos alterar el flujo de comandos.</p>
 
 <p><strong>-A</strong>  :Escaneo de Sistema Operativo y servicios</p>
 
-<h5 id="escaneo-de-servicios-de-banner-ligero">Escaneo de servicios de banner ligero</h5>
+<h2 id="escaneo-de-servicios-de-banner-ligero">Escaneo de servicios de banner ligero</h2>
 
 <p>Es mucho menos ruidoso que un escaneo agresivo y permite obtener datos sin llamar demasiado la atención, 
 lo que aporta una clara ventaja.</p>
@@ -481,7 +479,9 @@ Lo usamos ejecutando este código:</p>
         locate .nse | xargs <span class="nb">grep</span> <span class="s2">"categories"</span> | <span class="nb">grep</span> <span class="nt">-oP</span> <span class="s1">'".*?"'</span> | <span class="nb">sort</span> <span class="nt">-u</span>
 <span class="o">}</span></code></pre></figure>
 
-<h3 id="haciendo-fuzzing-para-encontrar-directorios">Haciendo Fuzzing para encontrar directorios</h3>
+<ul>
+  <li><em>Haciendo Fuzzing para encontrar directorios</em></li>
+</ul>
 
 <p>Podremos hacer fuzzing con los scripts de nmap, pero tener en cuenta que el script solo te enlista algunos directorios 
 por eso su peso es menor y no hace tanta bulla como las listas encontradas en el siguiente directorio:</p>
@@ -495,7 +495,9 @@ por eso su peso es menor y no hace tanta bulla como las listas encontradas en el
 <p>Si eres curioso puedes ver como se intercepta el trafico que se envía a las páginas para encontrar esos directorios con Tshark 
 o Wireshark; pero también existen otras herramientas para encontrar directorios como:</p>
 
-<h4 id="wfuzz">Wfuzz</h4>
+<ul>
+  <li><em>Wfuzz</em></li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">wfuzz <span class="nt">-c</span> <span class="nt">-L</span> <span class="nt">-t</span> 400 <span class="nt">--hc</span><span class="o">=</span>400 <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt  <span class="o">{</span>IP<span class="o">}</span>/FUZZ</code></pre></figure>
 
@@ -520,27 +522,37 @@ agregamos a nuestro comando Wfuzz de la siguiente manera.</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">wfuzz <span class="nt">-c</span> <span class="nt">-L</span> <span class="nt">-t</span> 400 <span class="nt">--hc</span><span class="o">=</span>400 <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt <span class="nt">-w</span> extensiones.txt <span class="o">{</span>IP<span class="o">}</span>/FUZZ/FUZ2Z</code></pre></figure>
 
-<h4 id="dirbuster">Dirbuster</h4>
+<ul>
+  <li><em>Dirbuster</em></li>
+</ul>
 
 <p>Esta manera es gráfica asi que no creo que haya problemas y que no sea necesario explicar</p>
 
-<h4 id="dirb">Dirb</h4>
+<ul>
+  <li><em>Dirb</em></li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">dirb <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
 
-<h4 id="gobuster">GoBuster</h4>
+<ul>
+  <li><em>GoBuster</em></li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">gobuster <span class="nb">dir</span> <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt <span class="nt">--url</span> <span class="o">{</span>IP<span class="o">}</span></code></pre></figure>
 
-<h4 id="dirsearch">DirSearch</h4>
+<ul>
+  <li><em>DirSearch</em></li>
+</ul>
 
 <p>Este se debe descargar desde su git</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">./dirsearch.py <span class="nt">-u</span> <span class="o">{</span>ip<span class="o">}</span> <span class="nt">-E</span> <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt </code></pre></figure>
 
-<h3 id="técnicas-de-enumeración-bajo-un-servidor-web">Técnicas de enumeración bajo un servidor web</h3>
+<h2 id="técnicas-de-enumeración-bajo-un-servidor-web">Técnicas de enumeración bajo un servidor web</h2>
 
-<h4 id="wafw00f">wafw00f</h4>
+<ul>
+  <li><em>wafw00f</em></li>
+</ul>
 
 <p>Esta herramienta ayuda a buscar si la página web utiliza un WAF(Web Application Firewall)</p>
 
@@ -623,7 +635,9 @@ y los ataca en busca de varias cosas:</p>
 <p>secuestrarles la sesión, robarles la contraseña o cualquier otra 
 información que considere de interés.</p>
 
-<h5 id="cross-site-scripting-persistente">Cross Site Scripting persistente</h5>
+<ul>
+  <li><em>Cross Site Scripting persistente</em></li>
+</ul>
 
 <p>Si el código que hemos insertado se queda almacenado en el servidor, por ejemplo formando parte de una contribución en un foro, 
 el ataque se dice que es persistente. Cualquier usuario que entre a leer dicha contribución leerá el texto inocente 
@@ -635,7 +649,9 @@ así como también de las de otros programas que tenga instalados, el Adobe Flas
 como el atacante tiene previsto. Para él es por tanto una ruleta de la suerte. 
 No puede predecir el usuario que va a caer en la trampa.</p>
 
-<h4 id="cross-site-scripting-reflejado">Cross Site Scripting reflejado</h4>
+<ul>
+  <li><em>Cross Site Scripting reflejado</em></li>
+</ul>
 
 <p>Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
 llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado.</p>
@@ -646,7 +662,9 @@ el cual intentará robarle la «cookie» de la sesión, o los datos que introduz
 acciones más sofisticadas en su PC. Pero la característica diferencial con el anterior ataque es que en este caso 
 en el servidor web no queda almacenado nada.</p>
 
-<h4 id="cómo-saber-si-un-sitio-web-tiene-esta-vulnerabilidad">¿Cómo saber si un sitio web tiene esta vulnerabilidad?</h4>
+<ul>
+  <li><em>¿Cómo saber si un sitio web tiene esta vulnerabilidad?</em></li>
+</ul>
 
 <p>Si en un sitio que ofrece búsquedas por palabras clave, en lugar de usar ese campo para buscar, escribimos lo siguiente:</p>
 
@@ -673,13 +691,18 @@ servidor al que se fuerza la conexión.</p>
 
 <h2 id="sql-injection">SQL Injection</h2>
 
-<h4 id="sqlmap">SQLmap</h4>
+<ul>
+  <li><em>SQLmap</em></li>
+</ul>
 
 <p>Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por aquí</p>
 
 <p><a href="https://www.solvetic.com/tutoriales/article/1615-sqlmap-herramienta-de-inyecci%C3%B3n-de-sql-y-ethical-hacking-de-bases-de-datos/#:~:text=Esta%20herramienta%20sirve%20para%20testear,de%20una%20base%20de%20datos.">SQLmap</a></p>
 
-<h4 id="manera-manual">Manera manual</h4>
+<ul>
+  <li><em>Manera manual</em></li>
+</ul>
+
 
         
       </section>

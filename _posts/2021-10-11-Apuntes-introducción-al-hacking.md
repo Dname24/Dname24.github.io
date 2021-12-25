@@ -124,7 +124,7 @@ done
 Después de ejecutarlo vemos que permisos tienen las carpetas o archivos, si encontramos un permiso SUID podemos conseguir el "root"
 como lo vimos antes.
 
-#### Explotación de un PATH Hijacking
+## Explotación de un PATH Hijacking
 
 Consiste en suplantar una librería **$PATH**, que un binario esté usando para inyectar código de forma que 
 el atacante escale privilegios y/u obtenga un shell en el sistema o consiga root.
@@ -171,7 +171,7 @@ Existe la herramienta Nmap que se usa para enumerar puertos, tenemos algunos par
 **-A**  :Escaneo de Sistema Operativo y servicios
 
 
-##### Escaneo de servicios de banner ligero
+## Escaneo de servicios de banner ligero
 
 Es mucho menos ruidoso que un escaneo agresivo y permite obtener datos sin llamar demasiado la atención, 
 lo que aporta una clara ventaja.
@@ -201,7 +201,7 @@ function scripts_nmap(){
 
 {% endhighlight %}
 
-### Haciendo Fuzzing para encontrar directorios
+ - *Haciendo Fuzzing para encontrar directorios*
 
 Podremos hacer fuzzing con los scripts de nmap, pero tener en cuenta que el script solo te enlista algunos directorios 
 por eso su peso es menor y no hace tanta bulla como las listas encontradas en el siguiente directorio: 
@@ -217,7 +217,7 @@ nmap -p80 {IP}  --script http-enum -oN webScan
 Si eres curioso puedes ver como se intercepta el trafico que se envía a las páginas para encontrar esos directorios con Tshark 
 o Wireshark; pero también existen otras herramientas para encontrar directorios como:
 
-#### Wfuzz
+ - *Wfuzz*
 
 {% highlight shell %}
 wfuzz -c -L -t 400 --hc=400 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt  {IP}/FUZZ
@@ -248,23 +248,23 @@ agregamos a nuestro comando Wfuzz de la siguiente manera.
 wfuzz -c -L -t 400 --hc=400 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -w extensiones.txt {IP}/FUZZ/FUZ2Z
 {% endhighlight %}
 
-#### Dirbuster
+ - *Dirbuster*
 
 Esta manera es gráfica asi que no creo que haya problemas y que no sea necesario explicar
 
-#### Dirb
+ - *Dirb*
 
 {% highlight shell %}
 dirb {IP}
 {% endhighlight %}
 
-#### GoBuster
+ - *GoBuster*
 
 {% highlight shell %}
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt --url {IP}
 {% endhighlight %}
 
-#### DirSearch
+ - *DirSearch*
 
 Este se debe descargar desde su git 
 
@@ -272,9 +272,9 @@ Este se debe descargar desde su git
 ./dirsearch.py -u {ip} -E -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 
 {% endhighlight %}
 
-### Técnicas de enumeración bajo un servidor web
+## Técnicas de enumeración bajo un servidor web
 
-#### wafw00f
+ - *wafw00f*
 
 Esta herramienta ayuda a buscar si la página web utiliza un WAF(Web Application Firewall)
 
@@ -358,7 +358,7 @@ y los ataca en busca de varias cosas:
 secuestrarles la sesión, robarles la contraseña o cualquier otra 
 información que considere de interés.
 
-##### Cross Site Scripting persistente
+ - *Cross Site Scripting persistente*
 
 Si el código que hemos insertado se queda almacenado en el servidor, por ejemplo formando parte de una contribución en un foro, 
 el ataque se dice que es persistente. Cualquier usuario que entre a leer dicha contribución leerá el texto inocente 
@@ -370,7 +370,7 @@ así como también de las de otros programas que tenga instalados, el Adobe Flas
 como el atacante tiene previsto. Para él es por tanto una ruleta de la suerte. 
 No puede predecir el usuario que va a caer en la trampa.
 
-#### Cross Site Scripting reflejado
+ - *Cross Site Scripting reflejado*
 
 Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
 llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado. 
@@ -381,7 +381,7 @@ el cual intentará robarle la «cookie» de la sesión, o los datos que introduz
 acciones más sofisticadas en su PC. Pero la característica diferencial con el anterior ataque es que en este caso 
 en el servidor web no queda almacenado nada.
 
-#### ¿Cómo saber si un sitio web tiene esta vulnerabilidad?
+ - *¿Cómo saber si un sitio web tiene esta vulnerabilidad?*
 
 Si en un sitio que ofrece búsquedas por palabras clave, en lugar de usar ese campo para buscar, escribimos lo siguiente: 
 
@@ -407,10 +407,11 @@ servidor al que se fuerza la conexión.
 
 ## SQL Injection
 
-#### SQLmap
+ - *SQLmap*
 
 Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por aquí
 
 [SQLmap](https://www.solvetic.com/tutoriales/article/1615-sqlmap-herramienta-de-inyecci%C3%B3n-de-sql-y-ethical-hacking-de-bases-de-datos/#:~:text=Esta%20herramienta%20sirve%20para%20testear,de%20una%20base%20de%20datos.)
 
-#### Manera manual
+ - *Manera manual*
+

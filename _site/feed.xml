@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T19:56:59-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ciberseguridad y Hacking Ético</title><subtitle>Artículos y Apuntes sobre ciberseguridad</subtitle><author><name>ARgoN</name></author><entry><title type="html">Apuntes del curso Introducción al hacking</title><link href="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/" rel="alternate" type="text/html" title="Apuntes del curso Introducción al hacking" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking</id><content type="html" xml:base="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">&lt;h1 id=&quot;conceptos-básicos&quot;&gt;Conceptos básicos&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T19:20:29-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ciberseguridad y Hacking Ético</title><subtitle>Artículos y Apuntes sobre ciberseguridad</subtitle><author><name>ARgoN</name></author><entry><title type="html">Apuntes del curso Introducción al hacking</title><link href="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/" rel="alternate" type="text/html" title="Apuntes del curso Introducción al hacking" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking</id><content type="html" xml:base="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">&lt;h1 id=&quot;conceptos-básicos&quot;&gt;Conceptos básicos&lt;/h1&gt;
 &lt;h2 id=&quot;asignación-e-interpretación-de-permisos&quot;&gt;Asignación e Interpretación de permisos&lt;/h2&gt;
 
 &lt;p&gt;Para interpretar permisos podemos verlos con el comando &lt;strong&gt;ls -l&lt;/strong&gt; el cual nos muestra los permisos que tienen las carpetas o 
@@ -104,7 +104,7 @@ por ejemplo este código básico:&lt;/p&gt;
 &lt;p&gt;Después de ejecutarlo vemos que permisos tienen las carpetas o archivos, si encontramos un permiso SUID podemos conseguir el “root”
 como lo vimos antes.&lt;/p&gt;
 
-&lt;h4 id=&quot;explotación-de-un-path-hijacking&quot;&gt;Explotación de un PATH Hijacking&lt;/h4&gt;
+&lt;h2 id=&quot;explotación-de-un-path-hijacking&quot;&gt;Explotación de un PATH Hijacking&lt;/h2&gt;
 
 &lt;p&gt;Consiste en suplantar una librería &lt;strong&gt;$PATH&lt;/strong&gt;, que un binario esté usando para inyectar código de forma que 
 el atacante escale privilegios y/u obtenga un shell en el sistema o consiga root.
@@ -150,7 +150,7 @@ es de riesgo ya que podemos alterar el flujo de comandos.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;-A&lt;/strong&gt;  :Escaneo de Sistema Operativo y servicios&lt;/p&gt;
 
-&lt;h5 id=&quot;escaneo-de-servicios-de-banner-ligero&quot;&gt;Escaneo de servicios de banner ligero&lt;/h5&gt;
+&lt;h2 id=&quot;escaneo-de-servicios-de-banner-ligero&quot;&gt;Escaneo de servicios de banner ligero&lt;/h2&gt;
 
 &lt;p&gt;Es mucho menos ruidoso que un escaneo agresivo y permite obtener datos sin llamar demasiado la atención, 
 lo que aporta una clara ventaja.&lt;/p&gt;
@@ -168,7 +168,9 @@ Lo usamos ejecutando este código:&lt;/p&gt;
         locate .nse | xargs &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;categories&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oP&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot;.*?&quot;'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;haciendo-fuzzing-para-encontrar-directorios&quot;&gt;Haciendo Fuzzing para encontrar directorios&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Haciendo Fuzzing para encontrar directorios&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Podremos hacer fuzzing con los scripts de nmap, pero tener en cuenta que el script solo te enlista algunos directorios 
 por eso su peso es menor y no hace tanta bulla como las listas encontradas en el siguiente directorio:&lt;/p&gt;
@@ -182,7 +184,9 @@ por eso su peso es menor y no hace tanta bulla como las listas encontradas en el
 &lt;p&gt;Si eres curioso puedes ver como se intercepta el trafico que se envía a las páginas para encontrar esos directorios con Tshark 
 o Wireshark; pero también existen otras herramientas para encontrar directorios como:&lt;/p&gt;
 
-&lt;h4 id=&quot;wfuzz&quot;&gt;Wfuzz&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Wfuzz&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;wfuzz &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; 400 &lt;span class=&quot;nt&quot;&gt;--hc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;400 &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;IP&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/FUZZ&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -207,27 +211,37 @@ agregamos a nuestro comando Wfuzz de la siguiente manera.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;wfuzz &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; 400 &lt;span class=&quot;nt&quot;&gt;--hc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;400 &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; extensiones.txt &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;IP&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/FUZZ/FUZ2Z&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;dirbuster&quot;&gt;Dirbuster&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Dirbuster&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Esta manera es gráfica asi que no creo que haya problemas y que no sea necesario explicar&lt;/p&gt;
 
-&lt;h4 id=&quot;dirb&quot;&gt;Dirb&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Dirb&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;dirb &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;IP&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;gobuster&quot;&gt;GoBuster&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;GoBuster&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;gobuster &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt &lt;span class=&quot;nt&quot;&gt;--url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;IP&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;dirsearch&quot;&gt;DirSearch&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;DirSearch&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Este se debe descargar desde su git&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;./dirsearch.py &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;ip&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;técnicas-de-enumeración-bajo-un-servidor-web&quot;&gt;Técnicas de enumeración bajo un servidor web&lt;/h3&gt;
+&lt;h2 id=&quot;técnicas-de-enumeración-bajo-un-servidor-web&quot;&gt;Técnicas de enumeración bajo un servidor web&lt;/h2&gt;
 
-&lt;h4 id=&quot;wafw00f&quot;&gt;wafw00f&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;wafw00f&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Esta herramienta ayuda a buscar si la página web utiliza un WAF(Web Application Firewall)&lt;/p&gt;
 
@@ -310,7 +324,9 @@ y los ataca en busca de varias cosas:&lt;/p&gt;
 &lt;p&gt;secuestrarles la sesión, robarles la contraseña o cualquier otra 
 información que considere de interés.&lt;/p&gt;
 
-&lt;h5 id=&quot;cross-site-scripting-persistente&quot;&gt;Cross Site Scripting persistente&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Cross Site Scripting persistente&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Si el código que hemos insertado se queda almacenado en el servidor, por ejemplo formando parte de una contribución en un foro, 
 el ataque se dice que es persistente. Cualquier usuario que entre a leer dicha contribución leerá el texto inocente 
@@ -322,7 +338,9 @@ así como también de las de otros programas que tenga instalados, el Adobe Flas
 como el atacante tiene previsto. Para él es por tanto una ruleta de la suerte. 
 No puede predecir el usuario que va a caer en la trampa.&lt;/p&gt;
 
-&lt;h4 id=&quot;cross-site-scripting-reflejado&quot;&gt;Cross Site Scripting reflejado&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Cross Site Scripting reflejado&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
 llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado.&lt;/p&gt;
@@ -333,7 +351,9 @@ el cual intentará robarle la «cookie» de la sesión, o los datos que introduz
 acciones más sofisticadas en su PC. Pero la característica diferencial con el anterior ataque es que en este caso 
 en el servidor web no queda almacenado nada.&lt;/p&gt;
 
-&lt;h4 id=&quot;cómo-saber-si-un-sitio-web-tiene-esta-vulnerabilidad&quot;&gt;¿Cómo saber si un sitio web tiene esta vulnerabilidad?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;¿Cómo saber si un sitio web tiene esta vulnerabilidad?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Si en un sitio que ofrece búsquedas por palabras clave, en lugar de usar ese campo para buscar, escribimos lo siguiente:&lt;/p&gt;
 
@@ -360,13 +380,17 @@ servidor al que se fuerza la conexión.&lt;/p&gt;
 
 &lt;h2 id=&quot;sql-injection&quot;&gt;SQL Injection&lt;/h2&gt;
 
-&lt;h4 id=&quot;sqlmap&quot;&gt;SQLmap&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;SQLmap&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por aquí&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.solvetic.com/tutoriales/article/1615-sqlmap-herramienta-de-inyecci%C3%B3n-de-sql-y-ethical-hacking-de-bases-de-datos/#:~:text=Esta%20herramienta%20sirve%20para%20testear,de%20una%20base%20de%20datos.&quot;&gt;SQLmap&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;manera-manual&quot;&gt;Manera manual&lt;/h4&gt;</content><author><name>ARgoN</name></author><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">En este post están los apuntes que considero importante, también algunos recordatorios</summary></entry><entry><title type="html">Herramientas de Hacking</title><link href="http://localhost:4000/Herramientas-de-Hacking/" rel="alternate" type="text/html" title="Herramientas de Hacking" /><published>2020-01-30T00:00:00-05:00</published><updated>2020-01-30T00:00:00-05:00</updated><id>http://localhost:4000/Herramientas-de-Hacking</id><content type="html" xml:base="http://localhost:4000/Herramientas-de-Hacking/">&lt;h3 id=&quot;herramientas-de-hacking-y-pentesting&quot;&gt;Herramientas de hacking y pentesting&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Manera manual&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>ARgoN</name></author><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">En este post están los apuntes que considero importante, también algunos recordatorios</summary></entry><entry><title type="html">Herramientas de Hacking</title><link href="http://localhost:4000/Herramientas-de-Hacking/" rel="alternate" type="text/html" title="Herramientas de Hacking" /><published>2020-01-30T00:00:00-05:00</published><updated>2020-01-30T00:00:00-05:00</updated><id>http://localhost:4000/Herramientas-de-Hacking</id><content type="html" xml:base="http://localhost:4000/Herramientas-de-Hacking/">&lt;h3 id=&quot;herramientas-de-hacking-y-pentesting&quot;&gt;Herramientas de hacking y pentesting&lt;/h3&gt;
 &lt;p&gt;Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver 
 el código fuente e intentar recrearlo por nuestra cuenta:&lt;/p&gt;</content><author><name>ARgoN</name></author><category term="Burpsuite" /><category term="Bypassing" /><summary type="html">Esta sección es dedicada a programas y aplicaciones interesantes para el hacking</summary></entry><entry><title type="html">Apuntes Hack The Box</title><link href="http://localhost:4000/Apuntes-Hack-The-Box/" rel="alternate" type="text/html" title="Apuntes Hack The Box" /><published>2020-01-29T00:00:00-05:00</published><updated>2020-01-29T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-Hack-The-Box</id><content type="html" xml:base="http://localhost:4000/Apuntes-Hack-The-Box/">&lt;h3 id=&quot;apuntes-básicos&quot;&gt;Apuntes básicos:&lt;/h3&gt;
 
@@ -533,4 +557,4 @@ cualquier cosa en contraseña ya que no podemos ingresar si no colocamos un text
 
 &lt;h3 id=&quot;gobuster&quot;&gt;GoBuster&lt;/h3&gt;</content><author><name>ARgoN</name></author><category term="Hack The Box" /><category term="Vulnerabilidad" /><category term="Write Up" /><summary type="html">En esta sección están los apuntes de una página que se usa normalmente para hackear</summary></entry><entry><title type="html">Hacking de redes WIFI</title><link href="http://localhost:4000/Hacking-de-redes-WIFI/" rel="alternate" type="text/html" title="Hacking de redes WIFI" /><published>2020-01-29T00:00:00-05:00</published><updated>2020-01-29T00:00:00-05:00</updated><id>http://localhost:4000/Hacking-de-redes-WIFI</id><content type="html" xml:base="http://localhost:4000/Hacking-de-redes-WIFI/">&lt;h3 id=&quot;herramientas-de-hacking-y-pentesting&quot;&gt;Herramientas de hacking y pentesting&lt;/h3&gt;
 &lt;p&gt;Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver 
-el código fuente e intentar recrearlo por nuestra cuenta:&lt;/p&gt;</content><author><name>ARgoN</name></author><category term="Hospitales" /><category term="Dicom" /><category term="Radiant" /><summary type="html">Durante los últimos meses, hemos visto noticias por todos lados de datos médicos de pacientes los cuales han quedado expuestos por internet. Es algo alarmante pero no sorprendente teniendo en cuenta cómo está la seguridad a día de hoy. En el siguiente artículo, os explico en qué consiste este `gran fallo` y cómo es posible que estos datos queden expuestos al alcance de cualquiera.</summary></entry></feed>
+el código fuente e intentar recrearlo por nuestra cuenta:&lt;/p&gt;</content><author><name>ARgoN</name></author><category term="Wifi" /><category term="Apuntes" /><category term="WPA" /><summary type="html">Curso sobre hacking de redes y algunas configuraciones</summary></entry></feed>

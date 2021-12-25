@@ -6,7 +6,7 @@ var store = [{
         "teaser":null},{
         "title": "Hacking de redes WIFI",
         "excerpt":"Herramientas de hacking y pentesting  Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver  el código fuente e intentar recrearlo por nuestra cuenta:  ","categories": ["Research"],
-        "tags": ["Hospitales","Dicom","Radiant"],
+        "tags": ["Wifi","Apuntes","WPA"],
         "url": "http://localhost:4000/Hacking-de-redes-WIFI/",
         "teaser":null},{
         "title": "Herramientas de Hacking",
