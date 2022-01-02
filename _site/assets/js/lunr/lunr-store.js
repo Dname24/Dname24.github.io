@@ -5,17 +5,17 @@ var store = [{
         "url": "http://localhost:4000/Apuntes-Hack-The-Box/",
         "teaser":null},{
         "title": "Hacking de redes WIFI",
-        "excerpt":"Herramientas de hacking y pentesting  Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver  el código fuente e intentar recrearlo por nuestra cuenta:  ","categories": ["Research"],
+        "excerpt":"Conceptos básicos  Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver  el código fuente e intentar recrearlo por nuestra cuenta:  ","categories": ["Research"],
         "tags": ["Wifi","Apuntes","WPA"],
         "url": "http://localhost:4000/Hacking-de-redes-WIFI/",
         "teaser":null},{
         "title": "Herramientas de Hacking",
-        "excerpt":"Herramientas de hacking y pentesting  Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver  el código fuente e intentar recrearlo por nuestra cuenta:  ","categories": ["Research"],
-        "tags": ["Burpsuite","Bypassing"],
+        "excerpt":"SecList es una colección de varios tipos de listas que se utilizan durante las evaluaciones de seguridad, recopiladas en un solo lugar. Los tipos de lista incluyen nombres de usuario, contraseñas, URL, patrones de datos confidenciales, cargas útiles fuzzing, shells web y muchos más. GTFOBins el proyecto recopila funciones legítimas...","categories": ["Research"],
+        "tags": ["Herramientas","Intrusión","Páginas Web"],
         "url": "http://localhost:4000/Herramientas-de-Hacking/",
         "teaser":null},{
         "title": "Apuntes del curso Introducción al hacking",
         "excerpt":"Conceptos básicos Asignación e Interpretación de permisos Para interpretar permisos podemos verlos con el comando ls -l el cual nos muestra los permisos que tienen las carpetas o archivos y tendremos lo siguiente: d rwx r-xr-x ***** ***** 0 B Fri Nov 19 13:43:46 2021  ***** d: directorio rwx...","categories": ["Research","Utilidades","Exploits","Vulnerabilidades"],
-        "tags": ["Pentesting","Herramientas","Windows","Linux","Domain Controller","Guías","Privilege Escalation"],
+        "tags": ["Pentesting","Herramientas","Windows","Linux","Vulnerabilidades","Guías","Privilege Escalation"],
         "url": "http://localhost:4000/Apuntes-introducci%C3%B3n-al-hacking/",
         "teaser":null}]

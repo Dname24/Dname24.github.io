@@ -5,7 +5,7 @@ excerpt: "En este post están los apuntes que considero importante, también alg
 date: 2021-10-11
 classes: wide
 header:
-  teaser: #/assets/images/zerologon/zerologon.png
+  teaser: #/assets/images/
   teaser_home_page: true
 categories:
   - Research
@@ -17,7 +17,7 @@ tags:
   - Herramientas
   - Windows
   - Linux
-  - Domain Controller
+  - Vulnerabilidades
   - Guías
   - Privilege Escalation
 ---
