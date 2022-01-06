@@ -4,8 +4,8 @@ var store = [{
         "tags": ["Hack The Box","Vulnerabilidad","Write Up"],
         "url": "http://localhost:4000/Apuntes-Hack-The-Box/",
         "teaser":null},{
-        "title": "Hacking de redes WIFI",
-        "excerpt":"Conceptos básicos  Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver  el código fuente e intentar recrearlo por nuestra cuenta:  ","categories": ["Research"],
+        "title": "Hacking de Redes Inalámbricas (WiFi)",
+        "excerpt":"Vulneración de redes WPA/WPA2 Modo monitor Lo primero será poner nuestra tarjeta de red en modo monitor para capturar y escuchar todos los paquetes que viajan en el aire, se hace con los siguientes comandos: iwconfig sudo airmon-ng start wlan0mon #Activamos el modo monitor de nuestra placa ifconfig wlan0mon up...","categories": ["Research"],
         "tags": ["Wifi","Apuntes","WPA"],
         "url": "http://localhost:4000/Hacking-de-redes-WIFI/",
         "teaser":null},{

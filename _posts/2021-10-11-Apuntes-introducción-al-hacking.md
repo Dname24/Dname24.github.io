@@ -421,7 +421,6 @@ para jugar
 service mysql start
 mysql -uroot
 create table Tabla1(id int(2), username varchar(32), password(32));
-??? desde aquí hasta ???FIN las líneas pueden haber sido insertadas/borradas
 insert into Tabla1(id, username, password) values (1, "username", "password");
 select * from Tabla1;
 select * from Tabla1 where id = 1; #Selecciona los datos con la id que pongas

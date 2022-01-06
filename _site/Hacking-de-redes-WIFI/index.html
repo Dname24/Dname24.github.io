@@ -9,19 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Hacking de redes WIFI - Ciberseguridad y Hacking Ético</title>
-<meta name="description" content="Curso sobre hacking de redes y algunas configuraciones">
+<!-- begin _includes/seo.html --><title>Hacking de Redes Inalámbricas (WiFi) - Ciberseguridad y Hacking Ético</title>
+<meta name="description" content="Todo sobre hacking de redes wifi">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ciberseguridad y Hacking Ético">
-<meta property="og:title" content="Hacking de redes WIFI">
+<meta property="og:title" content="Hacking de Redes Inalámbricas (WiFi)">
 <meta property="og:url" content="http://localhost:4000/Hacking-de-redes-WIFI/">
 
 
-  <meta property="og:description" content="Curso sobre hacking de redes y algunas configuraciones">
+  <meta property="og:description" content="Todo sobre hacking de redes wifi">
 
 
 
@@ -52,7 +52,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "ARgoN",
+      "name": "Diego Ilave",
       "url": "http://localhost:4000",
       "sameAs": null
     }
@@ -164,7 +164,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Hacking de redes WIFI</li>
+        <li class="current">Hacking de Redes Inalámbricas (WiFi)</li>
       
     
   </ol>
@@ -186,14 +186,14 @@
       
 
       
-        <img src="/assets/images/avatar.png" alt="ARgoN" itemprop="image">
+        <img src="/assets/images/avatar.png" alt="Diego Ilave" itemprop="image">
       
     </div>
   
 
   <div class="author__content">
     
-      <h3 class="author__name" itemprop="name">ARgoN</h3>
+      <h3 class="author__name" itemprop="name">Diego Ilave</h3>
     
     
       <p class="author__bio" itemprop="description">
@@ -287,15 +287,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Hacking de redes WIFI">
-    <meta itemprop="description" content="Curso sobre hacking de redes y algunas configuraciones">
+    <meta itemprop="headline" content="Hacking de Redes Inalámbricas (WiFi)">
+    <meta itemprop="description" content="Todo sobre hacking de redes wifi">
     <meta itemprop="datePublished" content="January 29, 2020">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Hacking de redes WIFI
+          <h1 id="page-title" class="page__title" itemprop="headline">Hacking de Redes Inalámbricas (WiFi)
 </h1>
           
         </header>
@@ -309,9 +309,32 @@
           
           
         </p>
-        <h2 id="conceptos-básicos">Conceptos básicos</h2>
-<p>Esta sección es una recopilación de herramientas que nos pueden ser útliles pero recomiendo ver 
-el código fuente e intentar recrearlo por nuestra cuenta:</p>
+        <h1 id="vulneración-de-redes-wpawpa2">Vulneración de redes WPA/WPA2</h1>
+<h2 id="modo-monitor">Modo monitor</h2>
+<p>Lo primero será poner nuestra tarjeta de red en modo monitor para capturar y escuchar todos los paquetes que viajan en el aire, se hace con los siguientes comandos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iwconfig
+<span class="nb">sudo </span>airmon-ng start wlan0mon <span class="c">#Activamos el modo monitor de nuestra placa</span>
+ifconfig wlan0mon up <span class="c">#Levantamos la red</span>
+killall dhclient wpa_supplicant <span class="c">#Termina los procesos por atrás ya que haremos todo offline</span>
+/etc/init.d/networking restart <span class="c">#Reinicia el servicio de conexión</span>
+</code></pre></div></div>
+
+<h2 id="falsificación-de-nuestra-dirección-mac">Falsificación de nuestra dirección MAC</h2>
+
+<p>Con el comando <code class="language-plaintext highlighter-rouge">macchanger</code> podremos cambiar nuestra dirección MAC para no tener dificultades al momento de auditar una red</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>macchanger <span class="nt">-s</span> wlan0mon <span class="c">#Muestra la ip actual</span>
+macchanger <span class="nt">-l</span> | <span class="nb">grep</span> <span class="s2">"NATIONAL SECURITY AGENCY"</span>
+ifconfig wlan0mon down
+macchanger <span class="nt">--mac</span><span class="o">=</span>00:20:91:af:af:25 wlan0mon
+ifconfig wlan0mon up
+</code></pre></div></div>
+
+<p><img src="/assets/images/Hackin-redes-WIFI/mac.png" alt="" /></p>
+
+<h2 id="uso-de-airodump-para-efectuar-un-análisis-del-entorno">Uso de Airodump para efectuar un análisis del entorno</h2>
+
 
         
       </section>
@@ -413,7 +436,7 @@ el código fuente e intentar recrearlo por nuestra cuenta:</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 ARgoN</div>
+<div class="page__footer-copyright">&copy; 2022 Diego Ilave</div>
 
       </footer>
     </div>

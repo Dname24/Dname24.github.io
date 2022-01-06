@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "dark" #"dirt", "neon", "mint", "plum", "sunrise"
 locale                   : "en-US"
 title                    : "Ciberseguridad y Hacking Ético"
 title_separator          : "-"
-name                     : "ARgoN"
+name                     : "Diego Ilave"
 description              : "Artículos y Apuntes sobre ciberseguridad"
 url                      : "https://Dname24.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "ARgoN"
+  name             : "Diego Ilave"
   avatar           : "/assets/images/avatar.png"
   bio              : "CyberSecurity Analyst / CPHE / CHEE"
   uri              :
