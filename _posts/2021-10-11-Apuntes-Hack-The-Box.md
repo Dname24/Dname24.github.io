@@ -202,4 +202,22 @@ cualquier cosa en contraseña ya que no podemos ingresar si no colocamos un text
 
 
 
-### GoBuster
+### Fuzzing
+
+Estaremos usando la herramienta *WFUZZ* con la siguiente sintaxis
+
+```BASH
+wfuzz -c --hc=404 -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt  -u http://IP/FUZZ
+```
+Para buscar subdominios se cambia la sintaxis por la siguiente: 
+
+```BASH
+wfuzz -c --hc=404,400 -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt  -H "Host: FUZZ.IP" http://IP.htb/
+```
+### Server interno
+
+Para montarnos nuestro propio servidor python lo usamos con el siguiente comando
+
+```BASH
+python3 -m http.server
+```
