@@ -562,7 +562,7 @@ Para escalar privilegios debemos listar los permisos, investigando en [GTFobins]
 
 ## Abuso de permisos SUID para escalar privilegios
 
-Listamos si tenemos privilegios SUID con el comando `find \perm -4000 2>/dev/null` y buscamos en la anterior página si hay una vulnerabilidad. 
+Listamos si tenemos privilegios SUID con el comando `find / -perm -4000 2>/dev/null` y buscamos en la anterior página si hay una vulnerabilidad. 
 [SUID](https://www.luisguillen.com/posts/2017/12/como-funcionan-permisos-suid/)
 
 ## Abuso de las Capabilities para escalar privilegios
