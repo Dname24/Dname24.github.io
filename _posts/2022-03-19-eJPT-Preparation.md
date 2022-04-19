@@ -18,6 +18,9 @@ tags:
 ### Conceptos de criptografia y VPN
 
 Los protocolos de criptografia encriptan la informacion transmitida para proteger la comunicacion, un gran protocolo de es el *VPN* (Vitual Private Network).
-El VPN usa criptogria para extender una red privada sobre una publica, como internet. 
+El VPN usa criptografia para extender una red privada sobre una publica, como internet. 
+
+Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolos de una red privada, esto le permite realizar operaciones de red de bajo nivel los cuales puedes interceptar con **Wireshark**
+
 
 
