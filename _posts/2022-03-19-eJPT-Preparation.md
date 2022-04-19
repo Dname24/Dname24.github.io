@@ -15,15 +15,17 @@ tags:
   - eLearnSecurity
 ---
 
-### Conceptos de criptografia y VPN
+## Conceptos de criptografia y VPN
 
 Los protocolos de criptografia encriptan la informacion transmitida para proteger la comunicacion, un gran protocolo de es el *VPN* (Vitual Private Network).
 El VPN usa criptografia para extender una red privada sobre una publica, como internet. 
 
 Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolos de una red privada, esto le permite realizar operaciones de red de bajo nivel los cuales puedes interceptar con **Wireshark**
 
-#### Introduccion a Wireshark 
+### Introduccion a Wireshark 
 
 Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
+
+Como ya sabemos el protocolo que te permite ver o analizar los datos sin ser encriptados son ***HTTP*** mientras que aquellos que encriptan toda la informacion es ***HTTPS***.
 
 
