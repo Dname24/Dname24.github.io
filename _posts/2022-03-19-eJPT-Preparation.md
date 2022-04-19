@@ -22,5 +22,8 @@ El VPN usa criptografia para extender una red privada sobre una publica, como in
 
 Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolos de una red privada, esto le permite realizar operaciones de red de bajo nivel los cuales puedes interceptar con **Wireshark**
 
+#### Introduccion a Wireshark 
+
+Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
 
 
