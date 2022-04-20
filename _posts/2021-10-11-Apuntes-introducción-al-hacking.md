@@ -18,7 +18,6 @@ tags:
   - Windows
   - Linux
   - Vulnerabilidades
-  - Guías
   - Privilege Escalation
 ---
 

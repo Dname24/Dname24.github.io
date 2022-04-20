@@ -22,7 +22,7 @@ El VPN usa criptografia para extender una red privada sobre una publica, como in
 
 Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolos de una red privada, esto le permite realizar operaciones de red de bajo nivel los cuales puedes interceptar con **Wireshark**
 
-### -Introduccion a Wireshark 
+### Introduccion a Wireshark 
 
 Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
 
@@ -31,7 +31,6 @@ Nota: En el laboratorio para identificar el tipo de protocolo que usaba la pagin
 usamos Wireshark pero antes de elegir la interfaz de conectada debemos ver de donde 
 vienen las conexiones, tambien mirar siempre que hosts tiene en el /etc/hosts.
 ```
-
 
 ### Aritmetica Binaria Basica
 
@@ -61,13 +60,6 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
 
-![](/assets/images/OSI_Model_v1.svg)
-
-
-
-
-
-
-
+![](/assets/images/OSI_Model_v1.png)
 
 
