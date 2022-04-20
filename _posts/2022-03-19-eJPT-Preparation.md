@@ -56,10 +56,19 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 
 -"Payload" Es la informacion actualmente
 
-### ISO/OSI
+## ISO/OSI
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
 
-![](/assets/images/OSI_Model_v1.png)
+![](/assets/images/OSI_Model_v1.jpg)
+
+## Protocolos de internet
+
+### IP/Mask
+
+Para identificar completamente un Host, tambien necesita conocer su red. Con una IP/netmask de red, puede identificar la 
+parte de la red y la parte del host de una direccion IP. Haces la operacion "AND" entre la direccion IP y la SubNetMask obviamente ambos convertidos en binario, esto funciona par IPv4
+
+![](/assets/images/IP.jpg)
 
 
