@@ -27,11 +27,13 @@ Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolo
 Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
 
 ```
-Nota: En el laboratorio para identificar el tipo de protocolo que usaba la pagina local usamos Wireshark pero antes de elegir la interfaz de conectada debemos ver de donde vienen las conexiones, tambien mirar siempre si tiene hosts.
+Nota: En el laboratorio para identificar el tipo de protocolo que usaba la pagina local 
+usamos Wireshark pero antes de elegir la interfaz de conectada debemos ver de donde 
+vienen las conexiones, tambien mirar siempre que hosts tiene en el /etc/hosts.
 ```
 
 
-## Aritmetica Binaria Basica
+### Aritmetica Binaria Basica
 
 Convertir numeros de sistema decimal a sistema binario es algo sencillo, tambien se puede hacer con operadores logicos como: 
 
@@ -44,5 +46,32 @@ Convertir numeros de sistema decimal a sistema binario es algo sencillo, tambien
 -"XOR" Este operador hace alusion al 'OR exclusivo' 
 
 Tener en cuenta que la base hexadecimal tambien es usada en la informatica asi que es bueno saber como funciona
+
+## Protocolos
+
+### Paquetes
+
+Cada paquete en todo protocolo tiene la siguiente estructura:
+
+-"Header" El encabezado tiene una estructura especifica del protocolo: Esto garantiza que el host receptor pueda interpretar correctamente el payload y manejar la comunicacion general.
+
+-"Payload" Es la informacion actualmente
+
+### ISO/OSI
+
+OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
+
+
+<div>
+<p style = 'text-align:center'>
+<img src="https://es.wikipedia.org/wiki/Modelo_OSI#/media/Archivo:OSI_Model_v1.svg" width="500px">
+</p>
+</div>
+
+
+
+
+
+
 
 
