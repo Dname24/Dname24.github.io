@@ -61,12 +61,8 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
 
+![](/assets/images/OSI_Model_v1.svg)
 
-<div>
-<p style = 'text-align:center'>
-<img src="https://es.wikipedia.org/wiki/Modelo_OSI#/media/Archivo:OSI_Model_v1.svg" width="500px">
-</p>
-</div>
 
 
 
