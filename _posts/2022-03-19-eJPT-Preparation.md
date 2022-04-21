@@ -60,7 +60,7 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
 
-![](/assets/images/OSI_Model_v1.jpg)
+![](/assets/images/OSI.png)
 
 ## Protocolos de internet
 
