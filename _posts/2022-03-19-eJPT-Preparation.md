@@ -62,11 +62,7 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
 
-<center>
-
 ![](/assets/images/OSI.jpg)
-
-</center>
 
 ## Protocolos de internet
 
@@ -75,11 +71,7 @@ OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de l
 Para identificar completamente un Host, tambien necesita conocer su red. Con una IP/netmask de red, puede identificar la 
 parte de la red y la parte del host de una direccion IP. Haces la operacion "AND" entre la direccion IP y la SubNetMask obviamente ambos convertidos en binario, esto funciona par IPv4
 
-<center>
-
 ![](/assets/images/IP.jpg)
-
-</center>
 
 ## Enrutamiento
 
@@ -132,7 +124,7 @@ orientado a las conexiones pero proporciona la transferencia de datos orientado 
 Los puertos son usados para un solo proceso de conexion, en estos corren 'demonios' el cual es un programa que corre un 
 servicio como los de la siguiente imagen:
 
-<center>![](/assets/images/Ports.jpg)</center>
+![](/assets/images/Ports.jpg)
 
 Para saber que puertos estan abiertos y que programas estan corriendo en tu maquina puedes ejecutar el siguiente comando:
 
@@ -144,7 +136,7 @@ netstat -p tcp -p udp
 
 ## Firewall y Defensa de red
 
-cuack
+
 
 
 
