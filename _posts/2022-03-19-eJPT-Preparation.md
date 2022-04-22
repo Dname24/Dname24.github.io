@@ -24,7 +24,7 @@ El VPN usa criptografia para extender una red privada sobre una publica, como in
 
 Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolos de una red privada, esto le permite realizar operaciones de red de bajo nivel los cuales puedes interceptar con **Wireshark**
 
-### Introduccion a Wireshark 
+### -Introduccion a Wireshark 
 
 Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
 
@@ -34,7 +34,7 @@ usamos Wireshark pero antes de elegir la interfaz de conectada debemos ver de do
 vienen las conexiones, tambien mirar siempre que hosts tiene en el /etc/hosts.
 ```
 
-### Aritmetica Binaria Basica
+### -Aritmetica Binaria Basica
 
 Convertir numeros de sistema decimal a sistema binario es algo sencillo, tambien se puede hacer con operadores logicos como: 
 
@@ -50,7 +50,7 @@ Tener en cuenta que la base hexadecimal tambien es usada en la informatica asi q
 
 ## Protocolos
 
-### Paquetes
+### -Paquetes
 
 Cada paquete en todo protocolo tiene la siguiente estructura:
 
@@ -61,11 +61,11 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 ## ISO/OSI
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
-![](/assets/images/OSI.png)
+![](/assets/images/OSI.jpg)
 
 ## Protocolos de internet
 
-### IP/Mask
+### -IP/Mask
 
 Para identificar completamente un Host, tambien necesita conocer su red. Con una IP/netmask de red, puede identificar la 
 parte de la red y la parte del host de una direccion IP. Haces la operacion "AND" entre la direccion IP y la SubNetMask obviamente ambos convertidos en binario, esto funciona par IPv4
@@ -84,7 +84,7 @@ ip route
 
 ## Link Layer Devices and Protocols 
 
-### Direcciones MAC
+### -Direcciones MAC
 
 Las direcciones IP son la tercera capa (Network Layer) esquema de direccionamiento usado para identificar un host en una red
 mientras que las direcciones MAC solo identifican la tarjeta de red, para saber tu direccion MAC se necesita el siguiente 
@@ -98,7 +98,7 @@ ip addr
 Para que una maquina A envie un paquete a una maquina B a través de un router esta debe especificar la direccion IP de la 
 maquina B pero la direccion MAC del router, este se encargara de cambiarle la direccion MAC para que llegue a B.
 
-### ARP
+### -ARP
 Cuando un host quiere enviar paquetes a otro host este necesita conocer la direccion IP y direccion MAC de destino para poder
 construir el paquete.
 Por ejemplo en las oficinas para enviar un paquete de A a B, la maquina A se encarga de construir un paquete de **peticion 
@@ -113,14 +113,28 @@ ip neighbour
 
 ## TPC/UDP
 
-Ambos son protocolos mas comunes de transporte usados en internet, TCP te garantiza la entrega de paquetes 
+Ambos son protocolos mas comunes de transporte usados en internet, TCP te garantiza la entrega de paquetes y es estable 
+antes de transeferir informacion.
+En cuanto a UDP no garantiza la entrega de paquetes, no olvidar que existen otro tipo de protocolos como SCTP que es 
+orientado a las conexiones pero proporciona la transferencia de datos orientado a mensajes.
+
+### -Puertos
+
+Los puertos son usados para un solo proceso de conexion, en estos corren 'demonios' el cual es un programa que corre un 
+servicio como los de la siguiente imagen:
+
+![](/assets/images/Ports.jpg)
+
+Para saber que puertos estan abiertos y que programas estan corriendo en tu maquina puedes ejecutar el siguiente comando:
+
+```bash
+netstat -tunp
+
+netstat -p tcp -p ud
+```
 
 
-
-
-
-
-
+ 
 
 
 
