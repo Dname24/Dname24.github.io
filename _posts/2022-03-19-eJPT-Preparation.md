@@ -134,7 +134,12 @@ netstat -tunp
 netstat -p tcp -p udp
 ```
 
+***No olvidar que existen 65536 puertos***
+
 ## Firewall y Defensa de red
+
+La caracteristica mas basica de un firewall es el filtrado de paquetes, con un filtrado de paquetes el administrador puede 
+crear reglas con caracteristicas como la fuente de la IP, protocolo, puerto de destino, etc.
 
 
 
