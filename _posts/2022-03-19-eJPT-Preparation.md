@@ -132,11 +132,7 @@ orientado a las conexiones pero proporciona la transferencia de datos orientado 
 Los puertos son usados para un solo proceso de conexion, en estos corren 'demonios' el cual es un programa que corre un 
 servicio como los de la siguiente imagen:
 
-<center>
-
-![](/assets/images/Ports.jpg)
-
-</center>
+<center>![](/assets/images/Ports.jpg)</center>
 
 Para saber que puertos estan abiertos y que programas estan corriendo en tu maquina puedes ejecutar el siguiente comando:
 
@@ -148,6 +144,7 @@ netstat -p tcp -p udp
 
 ## Firewall y Defensa de red
 
+cuack
 
 
 
