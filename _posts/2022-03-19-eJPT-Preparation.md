@@ -15,6 +15,8 @@ tags:
   - eLearnSecurity
 ---
 
+# Conceptos basicos de redes
+
 ## Conceptos de criptografia y VPN
 
 Los protocolos de criptografia encriptan la informacion transmitida para proteger la comunicacion, un gran protocolo de es el *VPN* (Vitual Private Network).
@@ -59,7 +61,6 @@ Cada paquete en todo protocolo tiene la siguiente estructura:
 ## ISO/OSI
 
 OSI/ISO consiste en 7 capas y su uso como referencia para la implementacion de la actual capa de protocolos.
-
 ![](/assets/images/OSI.png)
 
 ## Protocolos de internet
@@ -70,5 +71,59 @@ Para identificar completamente un Host, tambien necesita conocer su red. Con una
 parte de la red y la parte del host de una direccion IP. Haces la operacion "AND" entre la direccion IP y la SubNetMask obviamente ambos convertidos en binario, esto funciona par IPv4
 
 ![](/assets/images/IP.jpg)
+
+## Enrutamiento
+
+Hay dispositivos de redes llamados 'routers', su proposito es aprender rutas por las cuales alcanzar otras redes y asi poder
+transferir paquetes de datos entre ellos, ese proceso se le llama 'enrutamiento'; Para poder saber que ruta mas corta puede tomar el router utilizamos teoria de nodos.
+Para conocer el enrutamiento en nuestra red puedes ejecutar el siguiente commando:
+
+```bash
+ip route
+```
+
+## Link Layer Devices and Protocols 
+
+### Direcciones MAC
+
+Las direcciones IP son la tercera capa (Network Layer) esquema de direccionamiento usado para identificar un host en una red
+mientras que las direcciones MAC solo identifican la tarjeta de red, para saber tu direccion MAC se necesita el siguiente 
+comando.
+
+
+```bash 
+ip addr
+```
+
+Para que una maquina A envie un paquete a una maquina B a través de un router esta debe especificar la direccion IP de la 
+maquina B pero la direccion MAC del router, este se encargara de cambiarle la direccion MAC para que llegue a B.
+
+### ARP
+Cuando un host quiere enviar paquetes a otro host este necesita conocer la direccion IP y direccion MAC de destino para poder
+construir el paquete.
+Por ejemplo en las oficinas para enviar un paquete de A a B, la maquina A se encarga de construir un paquete de **peticion 
+ARP** que contiene la IP de B pero la direccion ip FF:FF:FF:FF:FF:FF y con ayuda de los switches se envia a todas las
+maquinas preguntando si su IP es la que esta en el archivo hasta encontrarla.
+
+Para poder ver el ARP cache de tu host lo puedes hacer con el siguiente comando:
+
+```bash
+ip neighbour
+```
+
+## TPC/UDP
+
+Ambos son protocolos mas comunes de transporte usados en internet, TCP te garantiza la entrega de paquetes 
+
+
+
+
+
+
+
+
+
+
+
 
 
