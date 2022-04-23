@@ -83,17 +83,25 @@ Para conocer el enrutamiento en nuestra red puedes ejecutar el siguiente command
 ip route
 ```
 
+***Para poder agregar rutas estaticas usamos el siguiente comando:***
+
+```
+ip route add IP/24 dev "interfaz" 
+ip route add IP/24 via "IP"
+```
+
 ## Link Layer Devices and Protocols 
 
 ### -Direcciones MAC
 
 Las direcciones IP son la tercera capa (Network Layer) esquema de direccionamiento usado para identificar un host en una red
 mientras que las direcciones MAC solo identifican la tarjeta de red, para saber tu direccion MAC se necesita el siguiente 
-comando.
+comando:
 
 
 ```bash 
 ip addr
+
 ```
 
 Para que una maquina A envie un paquete a una maquina B a través de un router esta debe especificar la direccion IP de la 
@@ -110,6 +118,7 @@ Para poder ver el ARP cache de tu host lo puedes hacer con el siguiente comando:
 
 ```bash
 ip neighbour
+
 ```
 
 ## TPC/UDP
@@ -141,7 +150,6 @@ netstat -p tcp -p udp
 La caracteristica mas basica de un firewall es el filtrado de paquetes, con un filtrado de paquetes el administrador puede 
 crear reglas con caracteristicas como la fuente de la IP, protocolo, puerto de destino, etc.
 
+## DNS 
 
-
-
-
+Es el proceso que convierte un nombre de servidor en una direccion IP compatible con el ordenador 
