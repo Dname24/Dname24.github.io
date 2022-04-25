@@ -153,3 +153,9 @@ crear reglas con caracteristicas como la fuente de la IP, protocolo, puerto de d
 ## DNS 
 
 Es el proceso que convierte un nombre de servidor en una direccion IP compatible con el ordenador 
+
+# Aplicaciones web
+
+## HTTP 
+
+Es el protocolo mas usado por internet.

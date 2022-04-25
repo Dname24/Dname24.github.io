@@ -192,6 +192,7 @@ else {
 Esto es un concepto básico pero util en algunos casos como se mira en el código **php** el **#**
 sirve para hacer comentarios, lo podemos usar para ingresar como un usuario admin usando un fallo
 en el código ingresando así
+
 ```
 user: admin'#
 password: #
@@ -206,18 +207,19 @@ cualquier cosa en contraseña ya que no podemos ingresar si no colocamos un text
 
 Estaremos usando la herramienta *WFUZZ* con la siguiente sintaxis
 
-```BASH
+```bash
 wfuzz -c --hc=404 -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt  -u http://IP/FUZZ
 ```
 Para buscar subdominios se cambia la sintaxis por la siguiente: 
 
-```BASH
+```bash
 wfuzz -c --hc=404,400 -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt  -H "Host: FUZZ.IP" http://IP.htb/
 ```
 ### Server interno
 
 Para montarnos nuestro propio servidor python lo usamos con el siguiente comando
 
-```BASH
+
+```bash 
 python3 -m http.server
 ```
