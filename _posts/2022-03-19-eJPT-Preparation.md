@@ -175,4 +175,9 @@ Pero para conecciones HTTPS podemos interceptarlo con ***openssl*** por el puert
 openssl s_client -connect {Host}:443
 ```
 
-## HTTP Cookies
+## Cookies and Sessions
+
+Para los conceptos de Cookies y Sesiones tenemos toda la informacion en el siguiente link [Cookies and Sessions](https://programacionymas.com/blog/cookies-y-sesiones)
+
+
+
