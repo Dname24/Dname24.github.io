@@ -158,4 +158,21 @@ Es el proceso que convierte un nombre de servidor en una direccion IP compatible
 
 ## HTTP 
 
-Es el protocolo mas usado por internet.
+Informacion especifica en [HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
+
+Para poder interceptar la informacion de una pagina http lo podemos hacer con netcat de la siguiente manera:
+
+```bash
+nc -v {Host} 80
+
+GET / HTTP/1.1 
+Host: {Host}
+```
+
+Pero para conecciones HTTPS podemos interceptarlo con ***openssl*** por el puerto 443
+
+```bash
+openssl s_client -connect {Host}:443
+```
+
+## HTTP Cookies
