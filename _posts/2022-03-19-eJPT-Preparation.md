@@ -29,9 +29,9 @@ Cuado uno esta conectado por vpn actualmente esta corriendo los mismos protocolo
 Wireshark es una herramienta rastreadora(sniffer) de red, un sniffer te permite ver los datos transmitidos a través de la red hacia y desde su computadora.
 
 ```
-Nota: En el laboratorio para identificar el tipo de protocolo que usaba la pagina local 
-usamos Wireshark pero antes de elegir la interfaz de conectada debemos ver de donde 
-vienen las conexiones, tambien mirar siempre que hosts tiene en el /etc/hosts.
+Nota: En el laboratorio para identificar el tipo de protocolo de la pagina local 
+usamos Wireshark pero antes de elegir la interfaz de coneccion debemos ver de donde 
+vienen las conexiones, tambien mirar siempre que hosts tiene en el archivo '/etc/hosts'.
 ```
 
 ### -Aritmetica Binaria Basica
@@ -179,5 +179,27 @@ openssl s_client -connect {Host}:443
 
 Para los conceptos de Cookies y Sesiones tenemos toda la informacion en el siguiente link [Cookies and Sessions](https://programacionymas.com/blog/cookies-y-sesiones)
 
+# Recopilacion de informacion
+
+## Open Source Intelligence
+
+Para poder recopilar informacion de una empresa o de una persona podemos realizarlo a travez de redes sociales y tambien de paginas del gobierno encargadas
+de guardar toda nuestra informacion.
+
+## Enumeracion de subdominios pasivo
+
+Para realizar varias consultas de subdominios existen varios recursos como:
 
 
+[dns.dumpster.com](https://dnsdumpster.com/)
+[Sublist3r](https://github.com/aboul3la/Sublist3r)
+
+Pero recordemos que con wfuzz tambien podemos hacer el mismo reconocimiento de subdominios con un buen 'wordlists' como el de [SecLists](https://github.com/danielmiessler/SecLists.git) y ejecutando el siguiente comando:
+
+```bash
+wfuzz -H 'HOST:FUZZ.IP' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+```
+
+## Nmap
+
+Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas
