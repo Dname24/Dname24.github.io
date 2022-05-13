@@ -192,6 +192,7 @@ Para realizar varias consultas de subdominios existen varios recursos como:
 
 
 [dns.dumpster.com](https://dnsdumpster.com/)
+
 [Sublist3r](https://github.com/aboul3la/Sublist3r)
 
 Pero recordemos que con wfuzz tambien podemos hacer el mismo reconocimiento de subdominios con un buen 'wordlists' como el de [SecLists](https://github.com/danielmiessler/SecLists.git) y ejecutando el siguiente comando:
@@ -203,3 +204,4 @@ wfuzz -H 'HOST:FUZZ.IP' -w /usr/share/seclists/Discovery/DNS/subdomains-top1mill
 ## Nmap
 
 Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas, tambien existen otros escaners de puertos parecidos a Nmap [masscan](https://github.com/robertdavidgraham/masscan.git)
+
