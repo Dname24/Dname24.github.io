@@ -202,4 +202,4 @@ wfuzz -H 'HOST:FUZZ.IP' -w /usr/share/seclists/Discovery/DNS/subdomains-top1mill
 
 ## Nmap
 
-Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas
+Para el uso de nmap podemos ver walkthrough de maquinas en HTB u otras platadormas, tambien existen otros escaners de puertos parecidos a Nmap [masscan](https://github.com/robertdavidgraham/masscan.git)
