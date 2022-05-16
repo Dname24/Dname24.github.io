@@ -227,3 +227,13 @@ if (issets($_GET['cmd']))
 
 Este nos permite enviar una query via GET que nos interpreta como una shell.
 
+## Enumeracion de directorios
+
+Existen varias tecnicas de enumeracion de directorios que ya estan explicadas en otra seccion de mi pagina web
+
+## Google Hacking
+
+Al momento de realizar busquedas en google existen algunos caracterecs basicos que nos ayudan a especificar lo que queremos encontrar.
+
+![](/assets/images/Google.jpeg)
+
