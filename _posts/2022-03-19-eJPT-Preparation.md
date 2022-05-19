@@ -281,3 +281,8 @@ fclose($fp);
 
 >
 ```
+## Ataques de contraseña
+
+Como  sabemos nuestras maquinas, cuentas o incluso las redes sociales almacenan constraseñas pero estas por obvias razones estan encriptadas, una manera de poder desencriptarlas es con el uso de la fuerza bruta y con uso de ataques de diccionario.
+
+Kali Linux o Parrot nos ofrecen varias herramientas para ataques de fuerza bruta, entre ellos el mas conocido es **John the Ripper**
