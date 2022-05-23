@@ -281,6 +281,12 @@ fclose($fp);
 
 >
 ```
+
+# Ataques de sistema
+
+## Malware
+
+
 ## Ataques de contraseña
 
 Como  sabemos nuestras maquinas, cuentas o incluso las redes sociales almacenan constraseñas pero estas por obvias razones estan encriptadas, una manera de poder desencriptarlas es con el uso de la fuerza bruta y con uso de ataques de diccionario.
