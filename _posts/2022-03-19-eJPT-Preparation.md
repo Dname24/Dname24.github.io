@@ -327,3 +327,18 @@ hydra -U <service> // -U para obtener informacion detallada del modulo que vas a
 
 hydra -L users.txt -P passwords.txt <service://server> <options>
 ```
+## Windows Shares
+
+### NetBIOS
+
+Es un protocolo de red que viene activado por defecto, es obsoleto y hoy en dia no es muy utilizado. Sin embargo puede tener vulnerabilidades que pueden ser aprovechadas, normalmente corre en el puerto 139.
+
+## Null Sessions
+
+Una sesion nula ocurre cuando se inicia sesion en un sistema sin nombre de usuario ni contraseña.
+
+### Enumeracion de Windows Shares
+
+#### NbtStat
+
+
