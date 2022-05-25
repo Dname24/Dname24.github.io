@@ -286,9 +286,44 @@ fclose($fp);
 
 ## Malware
 
+Un malware es la abreviacion de "Malicious Software" el cual busca denegaciones de servicio, espionaje entre otras actividades maliciosas.
+
+### Backdoor
+
+Es un software hecho por 2 componentes, un servidor y una conexion al cliente trasero.
+
+### Rootkit
+
+Es un malware creado para esconderse de los usuarios y programas de antivirus para poder obtener hasta una shell como usuario root.
+
+### Bootkit
+
+Son rootkits programados para infectar el Master Boot Record, contiene instrucciones para cargar y ejecutar el sistema opertivo pero ya casi dejaron de existir para Windows con la llegada de UEFI y Secure Boot.
 
 ## Ataques de contraseña
 
 Como  sabemos nuestras maquinas, cuentas o incluso las redes sociales almacenan constraseñas pero estas por obvias razones estan encriptadas, una manera de poder desencriptarlas es con el uso de la fuerza bruta y con uso de ataques de diccionario.
 
 Kali Linux o Parrot nos ofrecen varias herramientas para ataques de fuerza bruta, entre ellos el mas conocido es **John the Ripper**
+
+## Hashcat 
+
+Esta herramienta se usa para el crakeo de contraseñas a traves de hashes, se caracteriza por su rapidez.
+
+## Ataques Buffer Overflow
+
+Los ataques de Buffer Overflow ocurren cuando un programa excede el uso de memoria asignado por el SO, escribiendo en el bloque de memoria contiguo.
+
+# Ataques de Red
+
+## Aunthentication Cracking
+
+## Hydra
+
+Este programa instalado tanto en Kali como en Parrot nos ayuda a realizar ataques de fuerza bruta a servicios como: FTP, HTTP, Cisco auth, IMAP, RDP, SMB, SSH, Telnet entre otros. Podemos usar [diccionarios](https://wiki.skullsecurity.org/Passwords)
+
+```bash
+hydra -U <service> // -U para obtener informacion detallada del modulo que vas a usar
+
+hydra -L users.txt -P passwords.txt <service://server> <options>
+```
