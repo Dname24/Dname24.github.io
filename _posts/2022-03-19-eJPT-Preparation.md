@@ -347,5 +347,13 @@ Una sesion nula ocurre cuando se inicia sesion en un sistema sin nombre de usuar
 
 Este ultimo nos muestra tambien los archivos ocultos usando herramientas estandar de Windows, con estas herramientas podriamos relizar ya una enumercion y obtener algunos dato de inmportancia.
 
+```bash
+python3 /usr/share/doc/python3-impacket/examples/samrdump.py {IP}
+```
+Con samrdump.py podemos enumerar cuentas de usuario, recursos compartidos y tambien informacion confidencial; tambien lo podemos hacer con Nmap de la siguiente manera.
 
-
+```bash
+nmap --script=smb-enum-shares {IP}
+nmap --script=smb-enum-users {IP}
+nmap --script=smb-brute {IP}
+```
