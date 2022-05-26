@@ -343,8 +343,9 @@ Una sesion nula ocurre cuando se inicia sesion en un sistema sin nombre de usuar
 
 -[Net View](https://docs.microsoft.com/es-es/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh875576(v=ws.11))
 
--[smbclient](http://192.168.18.86:8000)
+-[smbclient]()
 
-Este ultimo nos muestra tambien los archivos ocultos usando herramientas estandar de Windows.
+Este ultimo nos muestra tambien los archivos ocultos usando herramientas estandar de Windows, con estas herramientas podriamos relizar ya una enumercion y obtener algunos dato de inmportancia.
+
 
 
