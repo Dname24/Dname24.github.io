@@ -347,3 +347,4 @@ Una sesion nula ocurre cuando se inicia sesion en un sistema sin nombre de usuar
 
 Este ultimo nos muestra tambien los archivos ocultos usando herramientas estandar de Windows.
 
+
