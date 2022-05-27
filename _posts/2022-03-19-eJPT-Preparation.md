@@ -111,7 +111,7 @@ maquina B pero la direccion MAC del router, este se encargara de cambiarle la di
 Cuando un host quiere enviar paquetes a otro host este necesita conocer la direccion IP y direccion MAC de destino para poder
 construir el paquete.
 Por ejemplo en las oficinas para enviar un paquete de A a B, la maquina A se encarga de construir un paquete de **peticion 
-ARP** que contiene la IP de B pero la direccion ip FF:FF:FF:FF:FF:FF y con ayuda de los switches se envia a todas las
+ARP** que contiene la IP de B pero la direccion MAC FF:FF:FF:FF:FF:FF y con ayuda de los switches se envia a todas las
 maquinas preguntando si su IP es la que esta en el archivo hasta encontrarla.
 
 Para poder ver el ARP cache de tu host lo puedes hacer con el siguiente comando:
@@ -357,3 +357,18 @@ nmap --script=smb-enum-shares {IP}
 nmap --script=smb-enum-users {IP}
 nmap --script=smb-brute {IP}
 ```
+
+## ARP Spoofing
+
+Basicamente es el envenenamiento de tablas ARP, esta tecnica conciste en manipular las tablas ARP para que el atacante funcione como un Man In The Middle. Esto se puede hacer enviando respuestas ARP gratuitas.
+
+### Arpspoof
+
+Esta herramienta nos puede ayudar con los envenenamientos de red ARP, antes de utilizarlo debemos activar el Linux Kernel IP Forwarding.
+
+```bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+arpspoof -i <Interface> -t <target> -r <host>
+```
+
