@@ -14,6 +14,8 @@ tags:
   - Certificacion
   - eLearnSecurity
 ---
+![](/assets/images/certifados/eJPT.jpeg)
+
 
 # Conceptos basicos de redes
 
