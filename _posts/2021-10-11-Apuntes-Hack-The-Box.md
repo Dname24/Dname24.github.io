@@ -215,6 +215,11 @@ Para buscar subdominios se cambia la sintaxis por la siguiente:
 ```bash
 wfuzz -c --hc=404,400 -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt  -H "Host: FUZZ.IP" http://IP.htb/
 ```
+
+```bash
+wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u IP -H "Host: FUZZ.IP" --hh 0
+```
+
 ### Server interno
 
 Para montarnos nuestro propio servidor python lo usamos con el siguiente comando

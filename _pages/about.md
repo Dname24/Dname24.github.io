@@ -6,50 +6,13 @@ date: 2020-01-29
 ---
 
 
-Mi nombre es Diego Ed con el pseudonimo de ARgoN, soy estudiante independiente de ciberseguridad orientado al pentesting web
-y auditorias de redes, por el momento me encuentro estudiando diversos cursos e hice este vlog para anotar todo lo aprendido
-Tengo planeado conseguir distintos certificados empezando por:
+Mi nombre es Diego Ed, soy estudiante autodidacta de ciberseguridad orientado al pentesting web y auditorias de redes, por el momento me encuentro estudiando diversos cursos e hice este vlog para anotar todo lo aprendido.
+Tengo planeado conseguir certificados como:
 
-- CPHE (Certificado Profesional de Hacking Ético)
+- OSCP (Offensive Security Certified Profesional)
 
-- CHEE (Certificado de Hacking Ético Experto)
+- OSWE (Offensive Security Web Expert)
 
-
-# Correo y contacto directo
-
-¿Quieres ponerte en contacto conmigo?, puedes hacerlo a través de la dirección de correo `dilave30@gmail.com`.
-
-Para aquellos que me quieran enviar un mensaje, por aquí les dejo mi clave pública:
-
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEXqdqLhYJKwYBBAHaRw8BAQdAPRyKqhXgtKVABqKZxI0V6YLTF8G25IWl14FA
-JT7pYIS0J01hcmNlbG8gVsOhcXVleiA8czR2aWNyeXB0ZWRAZ21haWwuY29tPoiQ
-BBMWCAA4FiEENDtnx1ELlnUMTR1unkA6XrE5fgAFAl6nai4CGwMFCwkIBwIGFQoJ
-CAsCBBYCAwECHgECF4AACgkQnkA6XrE5fgAZJwD+Mo6XKD8bAKAUJDtkkVUBWw6e
-jOMzo+MPxIUEqoUuC6UBAL/DmsAIt1P1QS3BcrHNdsZoXSz9c/T/Psdawp2oLlwF
-0f8AAF0L/wAAXQYBEAABAQAAAAAAAAAAAAAAAP/Y/+AAEEpGSUYAAQEAAAEAAQAA
-/+ICoElDQ19QUk9GSUxFAAEBAAACkGxjbXMEMAAAbW50clJHQiBYWVogB+MAAgAF
-AA8AKQAHYWNzcEFQUEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA
-0y1sY21zAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAALZGVzYwAAAQgAAAA4Y3BydAAAAUAAAABOd3RwdAAAAZAAAAAUY2hhZAAA
-AaQAAAAsclhZWgAAAdAAAAAUYlhZWgAAAeQAAAAUZ1hZWgAAAfgAAAAUclRSQwAA
-AgwAAAAgZ1RSQwAAAiwAAAAgYlRSQwAAAkwAAAAgY2hybQAAAmwAAAAkbWx1YwAA
-AAAAAAABAAAADGVuVVMAAAAcAAAAHABzAFIARwBCACAAYgB1AGkAbAB0AC0AaQBu
-AABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADIAAAAcAE4AbwAgAGMAbwBwAHkAcgBp
-AGcAaAB0ACwAIAB1AHMAZQAgAGYAcgBlAGUAbAB5AAAAAFhZWiAAAAAAAAD21gAB
-AAAAANMtc2YzMgAAAAAAAQxKAAAF4///8yoAAAebAAD9h///+6L///2jAAAD2AAA
-wJRYWVogAAAAAAAAb5QAADjuAAADkFhZWiAAAAAAAAAknQAAD4MAALa+WFlaIAAA
-AAAAAGKlAAC3kAAAGN5wYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW3Bh
-cmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbcGFyYQAAAAAAAwAAAAJmZgAA
-8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUewAATM0AAJmaAAAmZgAA
-D1z/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQa
-FRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4e
-Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wgAR
-CAGQAZADASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAAAQIAAwQFBgcI/8QA
-GgEBAQEBAQEBAAAAAAAAAAAAAAECAwQFBv/aAAwDAQACEAMQAAAB5Uof0Hz2KEeA
-rGWBKwJWI0EGgAYCjRSNFkPFIWWDlTkSCMVIxEVmQjFSMVZGKkZ0aGIkjlGGIKcx
 DOuw0lQwrIYAyIDIAwwpMAYQGFAYSGEBhyhjQDIRgxDGBDCGEJhCQyMVeCQwWBCw
 bM5VjO21MNQgqCZAhNCSRCAhIMSQkYSwgwjAwYZBkkFgSEMEgkIYhDEMKMQ8QwjS
 ELBoLB45SSdtSEgMKyAkGFqPL3zsLAfxddqmqNb63mnO0Grzff57zJ34wwxCZEMk
