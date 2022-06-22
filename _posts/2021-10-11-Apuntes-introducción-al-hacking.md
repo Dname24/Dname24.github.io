@@ -403,6 +403,10 @@ servidor web a realizar peticiones desde dentro del sistema hacia el exterior. U
 de conocer, en base a las respuestas obtenidas, la lista de puertos que se encuentran abiertos o por el contrario cerrados en el 
 servidor al que se fuerza la conexión.
 
+```bash
+{{ get_flashed_messages.__globals__.__builtins__.open("/etc/passwd").read() }}
+```
+
 ## SQL Injection
 
  - *SQLmap*
