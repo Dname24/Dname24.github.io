@@ -1,8 +1,8 @@
 ---
 layout: single
-title: eJPT Preparation
-excerpt: "Bases para la certificacion eJPT"
-date: 2022-03-19
+title: eCPPTv2 Preparation
+excerpt: "Preparacion para el eCPPTv2"
+date: 2022-12-01
 classes: wide
 header:
   teaser: # /assets/images/hospital-dicom/dicom.png
