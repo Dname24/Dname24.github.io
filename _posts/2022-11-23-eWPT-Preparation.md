@@ -1,7 +1,7 @@
 ---
 layout: single
-title: eCPPTv2 Preparation
-excerpt: "Preparacion para el eCPPTv2"
+title: eWPT Preparation
+excerpt: "Preparacion para el eWPT"
 date: 2022-12-01
 classes: wide
 header:
@@ -10,15 +10,11 @@ header:
 categories:
   - Research
 tags:
-  - eJPT
+  - eWPT
   - Certificacion
   - eLearnSecurity
 ---
-![](/assets/images/certifados/eJPT.jpg)
 
+# HTTP Protocolos basicos
 
-# Conceptos basicos de redes
-
-
-
-
+Una de los protocolos mas conocidos es el *GET*
