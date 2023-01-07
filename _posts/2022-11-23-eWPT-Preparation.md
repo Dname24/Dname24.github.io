@@ -17,4 +17,18 @@ tags:
 
 # HTTP Protocolos basicos
 
-Una de los protocolos mas conocidos es el *GET*
+Una de los protocolos mas conocidos es el *GET* que es por defecto cuando escribes una URL, otras de esos protocolos son **POST,PUT,DELETE,OPTIONS,TRACE...**
+
+# HTTPS
+
+A pesar de ser seguro y encriptar la información esta un es vulnerable a XSS, SQL injections, entre otros.
+
+# Encondeado
+
+## CharSet
+
+Como la palabra lo sugiere contiene un conjunto de caracteres que representan un conjunto de simbolos que el usuario final puede
+mostrar en su navegador, algunos ejemplos de estos son ASCII, Unicode, Latin-1 y so on.
+
+
+
